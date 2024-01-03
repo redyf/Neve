@@ -12,18 +12,9 @@
     ./undotree.nix
     ./neogit.nix
     ./fugitive.nix
+    ./lsp.nix
+    ./cmp.nix
+    ./luasnip.nix
+    ./sets.nix
   ];
-
-  options = {
-    number = true;
-    relativenumber = true;
-    timeoutlen = 10;
-    updatetime = 50;
-    shiftwidth = 2;
-    colorcolumn = 80;
-    scrolloff = 8;
-    smartindent = true;
-    wrap = true;
-    guicursor = "";
-  };
 }
