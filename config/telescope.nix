@@ -2,18 +2,40 @@
   plugins.telescope = {
     enable = true;
     keymaps = {
-      "<leader>pf" = {
+      "<leader><space>" = {
         action = "find_files, {}";
         desc = "Find project files";
+      };
+      "<leader>ff" = {
+        action = "find_files, {}";
+        desc = "Find project files";
+      };
+      "<leader>/" = {
+        action = "live_grep";
+        desc = "Grep (root dir)";
+      };
+      "<leader>fr" = {
+        action = "oldfiles, {}";
+        desc = "Recent";
+      };
+      "<leader>fb" = {
+        action = "buffers, {}";
+        desc = "Buffers";
+      };
+      "<leader>b" = {
+        action = "buffers, {}";
+        desc = "buffer";
       };
       "<C-p>" = {
         action = "git_files, {}";
         desc = "Search git files";
       };
-      "<leader>ps" = {
-        action = "live_grep";
-        desc = "Project search";
-      };
     };
   };
+  keymaps = [
+    {
+      key = "<leader>f";
+      action = "find/file";
+    }
+  ];
 }

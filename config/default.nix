@@ -16,5 +16,15 @@
     ./cmp.nix
     ./luasnip.nix
     ./sets.nix
+    ./nvim-autopairs.nix
+    ./flash.nix
+    ./tmux-navigator.nix
+    ./todo-comments.nix
+    ./ts-autotag.nix
+    ./noice.nix
+    ./trouble.nix
+    ./neo-tree.nix
+    ./floaterm.nix
+    ./gitsigns.nix
   ];
 }
