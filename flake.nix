@@ -32,7 +32,7 @@
         # Run `nix flake check .` to verify that your config is not broken
         default = nixvimLib.check.mkTestDerivationFromNvim {
           inherit nvim;
-          name = "A nixvim configuration";
+          name = "Neve";
         };
       };
 
