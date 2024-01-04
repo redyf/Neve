@@ -1,9 +1,13 @@
-{self, ...}: {
+{
+  inputs,
+  self,
+  pkgs,
+  ...
+}: {
   # Import all your configuration modules here
   imports = [
     ./bufferline.nix
     ./colorscheme.nix
-    ./presence.nix
     ./keymaps.nix
     ./whichkey.nix
     ./telescope.nix
@@ -11,7 +15,7 @@
     ./harpoon.nix
     ./undotree.nix
     ./neogit.nix
-    ./fugitive.nix
+    # ./fugitive.nix
     ./lsp.nix
     ./cmp.nix
     ./luasnip.nix
@@ -26,5 +30,7 @@
     ./neo-tree.nix
     ./floaterm.nix
     ./gitsigns.nix
+    # ./neocord.nix
+    ./discordrpc.nix
   ];
 }

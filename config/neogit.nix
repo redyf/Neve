@@ -1,11 +1,11 @@
 {
   plugins.neogit = {
-    enable = false;
+    enable = true;
     disableBuiltinNotifications = true;
   };
   keymaps = [
     {
-      key = "<leader>gs";
+      key = "<leader>gg";
       action = "<cmd>Neogit<CR>";
     }
   ];

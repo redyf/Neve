@@ -9,6 +9,13 @@
       action = "<cmd>w<cr><esc>";
     }
 
+    # Quit
+    {
+      mode = "n";
+      key = "<leader>qq";
+      action = "<cmd>quitall<cr><esc>";
+    }
+
     # -- go to next/previous buffer
     {
       mode = "n";
