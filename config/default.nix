@@ -4,8 +4,14 @@
   pkgs,
   ...
 }: {
+  # TODO: Split plugins into modules according to their actions + Improve keymappings.
+
   # Import all your configuration modules here
   imports = [
+    ./conform.nix
+    ./nvim-lint.nix
+    ./alpha.nix
+    ./persistence.nix
     ./bufferline.nix
     ./colorscheme.nix
     ./keymaps.nix
@@ -32,5 +38,9 @@
     ./gitsigns.nix
     # ./neocord.nix
     ./discordrpc.nix
+    ./better-escape.nix
+    ./wakatime.nix
+    ./lualine.nix
+    # ./mini.nix
   ];
 }

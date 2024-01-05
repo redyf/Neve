@@ -16,20 +16,6 @@
       action = "<cmd>quitall<cr><esc>";
     }
 
-    # -- go to next/previous buffer
-    {
-      mode = "n";
-      key = "<Tab>";
-      action = "<cmd>BufferLineCycleNext<cr>";
-      options.silent = true;
-    }
-    {
-      mode = "n";
-      key = "<S-Tab>";
-      action = "<cmd>BufferLineCyclePrev<cr>";
-      options.silent = true;
-    }
-
     # Enable line numbers/relative
     {
       mode = "n";

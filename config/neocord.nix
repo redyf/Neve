@@ -3,11 +3,22 @@
   helpers,
   config,
   pkgs,
-  buildVimPlugin,
   inputs,
   ...
 }:
 with lib; let
+  extraPlugins = with pkgs.vimPlugins; [
+    (pkgs.vimUtils.buildVimPlugin {
+      pname = "neocord";
+      version = "2024-01-03";
+      src = pkgs.fetchFromGitHub {
+        owner = "IogaMaster";
+        repo = "neocord";
+        rev = "7351eba601fc445ea2f44d5016f3a1df66b93565";
+        sha256 = "1pcnvpyg0pylvbyvcx85zpab7l9sjx7gncw2sgnp9n4cds52fgmb";
+      };
+    })
+  ];
   cfg = config.plugins.neocord;
 in {
   options = {
@@ -15,7 +26,6 @@ in {
       helpers.extraOptionsOptions
       // {
         enable = mkEnableOption "neocord";
-        # package = pkgs.vimPlugins.neocord;
         package = helpers.mkPackageOption "neocord" pkgs.vimPlugins.neocord;
 
         # General options.
@@ -29,7 +39,7 @@ in {
           Update the Logo to the specified option ("auto" or url).
         '';
 
-        logo_tooltip = helpers.defaultNullOpts.mkEnum ["null" "string"] ''
+        logoTooltip = helpers.defaultNullOpts.mkEnum ["null" "string"] ''
           Sets the logo tooltip
         '';
 
@@ -186,6 +196,7 @@ in {
         reading_text = cfg.readingText;
         workspace_text = cfg.workspaceText;
         line_number_text = cfg.lineNumberText;
+        terminal_text = cfg.terminalText;
       }
       // cfg.extraOptions;
   in

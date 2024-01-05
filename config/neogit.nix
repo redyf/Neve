@@ -5,6 +5,10 @@
   };
   keymaps = [
     {
+      key = "<leader>g";
+      action = "+git";
+    }
+    {
       key = "<leader>gg";
       action = "<cmd>Neogit<CR>";
     }

@@ -1,20 +1,7 @@
 {
   plugins.treesitter = {
     enable = true;
+    indent = true;
     nixvimInjections = true;
-    ensureInstalled = [
-      "help"
-      "javascript"
-      "typescript"
-      "c"
-      "lua"
-      "rust"
-      "jsx"
-      "tsx"
-      "nix"
-      "bash"
-      "json"
-      "python"
-    ];
   };
 }
