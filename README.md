@@ -10,8 +10,8 @@ If you add a new configuration file, remember to add it to the
 
 ## Testing your new configuration
 
-To test your configuration simply run the following command
+To test my configuration simply run the following command
 
 ```
-nix run .
+nix run "github:redyf/neve"
 ```
