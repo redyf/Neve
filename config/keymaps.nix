@@ -5,33 +5,51 @@
   keymaps = [
     # General maps
     {
+      mode = "n";
       key = "<leader>f";
       action = "+find/file";
     }
 
     {
+      mode = "n";
       key = "<leader>s";
       action = "+search";
     }
 
     {
+      mode = "n";
       key = "<leader>q";
       action = "+quit/session";
     }
 
     {
+      mode = ["n" "v"];
+      key = "<leader>g";
+      action = "+git";
+    }
+
+    {
+      mode = "n";
       key = "<leader>u";
       action = "+ui";
     }
 
     {
+      mode = "n";
       key = "<leader>w";
       action = "+windows";
     }
 
     {
+      mode = "n";
       key = "<leader><Tab>";
       action = "+tab";
+    }
+
+    {
+      mode = ["n" "v"];
+      key = "<leader>d";
+      action = "+debug";
     }
 
     # Tabs
@@ -210,122 +228,176 @@
     {
       mode = "n";
       key = "<leader>ul";
-      action = "<cmd>set number<CR>";
+      action = ":lua ToggleLineNumber()<cr>";
       options = {
         silent = true;
-        desc = "Enable line numbers";
+        desc = "Toggle Line Numbers";
       };
     }
 
     {
       mode = "n";
       key = "<leader>uL";
-      action = "<cmd>set relativenumber<CR>";
+      action = ":lua ToggleRelativeLineNumber()<cr>";
       options = {
         silent = true;
-        desc = "Enable relative line numbers";
+        desc = "Toggle Relative Line Numbers";
       };
     }
 
-    # Use move command when line is highlighted so you can move then
+    {
+      mode = "n";
+      key = "<leader>uw";
+      action = ":lua ToggleWrap()<cr>";
+      options = {
+        silent = true;
+        desc = "Toggle Line Wrap";
+      };
+    }
+
     {
       mode = "v";
       key = "J";
       action = ":m '>+1<CR>gv=gv";
+      options = {
+        desc = "Use move command when line is highlighted
+";
+      };
     }
 
     {
       mode = "v";
       key = "K";
       action = ":m '>-2<CR>gv=gv";
+      options = {
+        desc = "Use move command when line is highlighted
+";
+      };
     }
 
-    # Allow cursor to stay in the same place after appending to current line
     {
       mode = "n";
       key = "J";
       action = "mzJ`z";
+      options = {
+        desc = "Allow cursor to stay in the same place after appending to current line ";
+      };
     }
 
-    # Allow C-d and C-u to keep the cursor in the middle
     {
       mode = "n";
       key = "<C-d>";
       action = "<C-d>zz";
+      options = {
+        desc = "Allow C-d and C-u to keep the cursor in the middle";
+      };
     }
 
     {
       mode = "n";
       key = "<C-u>";
       action = "<C-u>zz";
+      options = {
+        desc = "Allow C-d and C-u to keep the cursor in the middle";
+      };
     }
 
-    # Allow search terms to stay in the middle
     {
       mode = "n";
       key = "n";
       action = "nzzzv";
+      options = {
+        desc = "Allow search terms to stay in the middle
+";
+      };
     }
 
     {
       mode = "n";
       key = "N";
       action = "Nzzzv";
+      options = {
+        desc = "Allow search terms to stay in the middle
+";
+      };
     }
 
     # Paste stuff without saving the deleted word into the buffer
     {
-      mode = "n";
-      key = "<leader>pp";
+      mode = "x";
+      key = "<leader>p";
       action = "\"_dP";
+      options = {
+        desc = "Deletes to void register and paste over";
+      };
     }
 
     # Copy stuff to system clipboard with <leader> + y or just y to have it just in vim
     {
-      mode = "n";
+      mode = ["n" "v"];
       key = "<leader>y";
       action = "\"+y";
+      options = {
+        desc = "Copy to system clipboard";
+      };
     }
 
     {
-      mode = "v";
-      key = "<leader>y";
-      action = "\"+y";
-    }
-
-    {
-      mode = "n";
+      mode = ["n" "v"];
       key = "<leader>Y";
       action = "\"+Y";
+      options = {
+        desc = "Copy to system clipboard";
+      };
     }
 
     # Delete to void register
     {
-      mode = "n";
-      key = "<leader>d";
+      mode = ["n" "v"];
+      key = "<leader>D";
       action = "\"_d";
+      options = {
+        desc = "Delete to void register";
+      };
     }
 
-    {
-      mode = "v";
-      key = "<leader>d";
-      action = "\"_d";
-    }
-
+    # <C-c> instead of pressing esc just because
     {
       mode = "i";
       key = "<C-c>";
       action = "<Esc>";
     }
 
-    # Switch between projects
     {
       mode = "n";
       key = "<C-f>";
       action = "!tmux new tmux-sessionizer<CR>";
       options = {
-        silent = true;
+        desc = "Switch between projects";
       };
     }
   ];
+  extraConfigLua = ''
+    function ToggleLineNumber()
+    if vim.wo.number then
+      vim.wo.number = false
+    else
+      vim.wo.number = true
+        vim.wo.relativenumber = false
+        end
+        end
+
+        function ToggleRelativeLineNumber()
+        if vim.wo.relativenumber then
+          vim.wo.relativenumber = false
+        else
+          vim.wo.relativenumber = true
+            vim.wo.number = false
+            end
+            end
+
+            function ToggleWrap()
+            vim.wo.wrap = not vim.wo.wrap
+            end
+  '';
 }

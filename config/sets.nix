@@ -21,7 +21,7 @@
 
     smartindent = true;
 
-    wrap = true;
+    wrap = false;
 
     # Undo stuff from days ago
     swapfile = false;

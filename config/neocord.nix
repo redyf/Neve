@@ -201,7 +201,9 @@ in {
       // cfg.extraOptions;
   in
     mkIf cfg.enable {
-      extraPlugins = [cfg.package];
+      extraPlugins = [
+        cfg.package
+      ];
       extraConfigLua = ''
         require("neocord").setup${helpers.toLuaObject setupOptions}
       '';

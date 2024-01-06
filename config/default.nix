@@ -8,6 +8,7 @@
 
   # Import all your configuration modules here
   imports = [
+    ./dap.nix
     ./conform.nix
     ./nvim-lint.nix
     ./alpha.nix

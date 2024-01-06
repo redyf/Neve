@@ -30,6 +30,14 @@
         action = "git_files, {}";
         desc = "Search git files";
       };
+      "<leader>gc" = {
+        action = "git_commits, {}";
+        desc = "commits";
+      };
+      "<leader>gs" = {
+        action = "git_status, {}";
+        desc = "status";
+      };
     };
   };
   keymaps = [
