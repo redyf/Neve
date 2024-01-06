@@ -1,32 +1,225 @@
+# Thanks for the keybinds primeagen and folke!
 {
   globals.mapleader = " ";
 
   keymaps = [
-    # Save file (C-s is also available)
+    # General maps
+    {
+      key = "<leader>f";
+      action = "+find/file";
+    }
+
+    {
+      key = "<leader>s";
+      action = "+search";
+    }
+
+    {
+      key = "<leader>q";
+      action = "+quit/session";
+    }
+
+    {
+      key = "<leader>u";
+      action = "+ui";
+    }
+
+    {
+      key = "<leader>w";
+      action = "+windows";
+    }
+
+    {
+      key = "<leader><Tab>";
+      action = "+tab";
+    }
+
+    # Tabs
+    {
+      mode = "n";
+      key = "<leader><tab>l";
+      action = "<cmd>tablast<cr>";
+      options = {
+        silent = true;
+        desc = "Last tab";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader><tab>f";
+      action = "<cmd>tabfirst<cr>";
+      options = {
+        silent = true;
+        desc = "First Tab";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader><tab><tab>";
+      action = "<cmd>tabnew<cr>";
+      options = {
+        silent = true;
+        desc = "New Tab";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader><tab>]";
+      action = "<cmd>tabnext<cr>";
+      options = {
+        silent = true;
+        desc = "Next Tab";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader><tab>d";
+      action = "<cmd>tabclose<cr>";
+      options = {
+        silent = true;
+        desc = "Close tab";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader><tab>[";
+      action = "<cmd>tabprevious<cr>";
+      options = {
+        silent = true;
+        desc = "Previous Tab";
+      };
+    }
+
+    # Windows
     {
       mode = "n";
       key = "<leader>ww";
-      action = "<cmd>w<cr><esc>";
+      action = "<C-W>p";
+      options = {
+        silent = true;
+        desc = "Other window";
+      };
     }
 
-    # Quit
+    {
+      mode = "n";
+      key = "<leader>wd";
+      action = "<C-W>c";
+      options = {
+        silent = true;
+        desc = "Delete window";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>w-";
+      action = "<C-W>s";
+      options = {
+        silent = true;
+        desc = "Split window below";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>w|";
+      action = "<C-W>v";
+      options = {
+        silent = true;
+        desc = "Split window right";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>-";
+      action = "<C-W>s";
+      options = {
+        silent = true;
+        desc = "Split window below";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>|";
+      action = "<C-W>v";
+      options = {
+        silent = true;
+        desc = "Split window right";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<C-s>";
+      action = "<cmd>w<cr><esc>";
+      options = {
+        silent = true;
+        desc = "Save file";
+      };
+    }
+
+    # Quit/Session
     {
       mode = "n";
       key = "<leader>qq";
       action = "<cmd>quitall<cr><esc>";
+      options = {
+        silent = true;
+        desc = "Quit all";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>qs";
+      action = ":lua require('persistence').load()<cr>";
+      options = {
+        silent = true;
+        desc = "Restore session";
+      };
     }
 
-    # Enable line numbers/relative
+    {
+      mode = "n";
+      key = "<leader>ql";
+      action = "<cmd>lua require('persistence').load({ last = true })<cr>";
+      options = {
+        silent = true;
+        desc = "Restore last session";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>qd";
+      action = "<cmd>lua require('persistence').stop()<cr>";
+      options = {
+        silent = true;
+        desc = "Don't save current session";
+      };
+    }
+
     {
       mode = "n";
       key = "<leader>ul";
       action = "<cmd>set number<CR>";
+      options = {
+        silent = true;
+        desc = "Enable line numbers";
+      };
     }
+
     {
       mode = "n";
       key = "<leader>uL";
       action = "<cmd>set relativenumber<CR>";
+      options = {
+        silent = true;
+        desc = "Enable relative line numbers";
+      };
     }
+
     # Use move command when line is highlighted so you can move then
     {
       mode = "v";

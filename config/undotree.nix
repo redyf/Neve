@@ -12,7 +12,7 @@
   };
   keymaps = [
     {
-      key = "<leader>u";
+      key = "<leader>ut";
       action = "<cmd>UndotreeToggle<CR>";
     }
   ];

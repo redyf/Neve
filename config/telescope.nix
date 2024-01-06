@@ -34,8 +34,13 @@
   };
   keymaps = [
     {
-      key = "<leader>f";
-      action = "find/file";
+      mode = "n";
+      key = "<leader>st";
+      action = "<cmd>TodoTelescope<cr>";
+      options = {
+        silent = true;
+        desc = "Todo (Telescope)";
+      };
     }
   ];
 }
