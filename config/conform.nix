@@ -10,14 +10,14 @@
       lua = ["stylua"];
       python = ["black"];
       nix = ["alejandra"];
-      html = ["prettier_d"];
-      css = ["prettier_d"];
+      html = ["prettierd"];
+      css = ["prettierd"];
       javascript = ["prettierd"];
       javascriptreact = ["prettierd"];
       typescript = ["prettierd"];
       typescriptreact = ["prettierd"];
       markdown = ["prettierd"];
-      rust = ["rustfmt prettier_d"];
+      rust = ["rustfmt"];
     };
   };
 }

@@ -36,16 +36,6 @@
     };
   };
   extraConfigLua = ''
-    function runFile()
-    	local ft = vim.bo.filetype
-    	local run_cmd = { go = "go run", rust = "cargo run" , haskell = "runhaskell"}
-    	if run_cmd[ft] then
-    		vim.cmd("TermExec cmd=" .. '\'clear;echo "Run current file..."; ' .. run_cmd[ft] .. " %'")
-    	end
-    end
-
-    vim.api.nvim_set_keymap("n", "<space>r", "<cmd>lua runFile()<CR>", { noremap = true, silent = true })
-
     function _G.set_terminal_keymaps()
     	local opts = { buffer = 0 }
     	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)

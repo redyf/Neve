@@ -7,7 +7,7 @@
     {
       mode = "n";
       key = "<leader>x";
-      action = "diagnostics/quickfix";
+      action = "+diagnostics/quickfix";
     }
     {
       mode = "n";

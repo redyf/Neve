@@ -33,7 +33,7 @@
     incsearch = true;
 
     # Better colors
-    termguicolors = true;
+    termguicolors = false;
 
     scrolloff = 8; # Will never have less than 8 characters as you scroll down
     signcolumn = "yes";

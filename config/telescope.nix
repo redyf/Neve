@@ -24,7 +24,7 @@
       };
       "<leader>b" = {
         action = "buffers, {}";
-        desc = "buffer";
+        desc = "+buffer";
       };
       "<C-p>" = {
         action = "git_files, {}";
@@ -48,6 +48,14 @@
       options = {
         silent = true;
         desc = "Todo (Telescope)";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>,";
+      action = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>";
+      options = {
+        desc = "Switch Buffer";
       };
     }
   ];
