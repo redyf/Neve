@@ -22,6 +22,7 @@
     ./filetrees/neo-tree.nix
 
     ./git/gitsigns.nix
+    ./git/lazygit.nix
     ./git/neogit.nix
 
     ./languages/nvim-lint.nix
@@ -51,6 +52,7 @@
     ./utils/nvim-colorizer.nix
     ./utils/nvim-autopairs.nix
     ./utils/persistence.nix
+    ./utils/plenary.nix
     ./utils/todo-comments.nix
     ./utils/tmux-navigator.nix
     ./utils/undotree.nix

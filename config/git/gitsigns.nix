@@ -19,7 +19,7 @@
       action = "gitsigns";
       options = {
         silent = true;
-        desc = "+gitsigns";
+        desc = "+hunks";
       };
     }
     {
