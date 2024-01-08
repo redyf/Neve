@@ -4,44 +4,56 @@
   pkgs,
   ...
 }: {
-  # TODO: Split plugins into modules according to their actions + Improve keymappings.
+  # TODO: Implement code actions
 
   # Import all your configuration modules here
   imports = [
-    ./dap.nix
-    ./conform.nix
-    ./nvim-lint.nix
-    ./alpha.nix
-    ./persistence.nix
-    ./bufferline.nix
-    ./colorscheme.nix
-    ./keymaps.nix
-    ./whichkey.nix
-    ./telescope.nix
-    ./treesitter.nix
-    ./harpoon.nix
-    ./undotree.nix
-    ./neogit.nix
-    # ./fugitive.nix
-    ./lsp.nix
-    ./cmp.nix
-    ./luasnip.nix
     ./sets.nix
-    ./nvim-autopairs.nix
-    ./flash.nix
-    ./tmux-navigator.nix
-    ./todo-comments.nix
-    ./ts-autotag.nix
-    ./noice.nix
-    ./trouble.nix
-    ./neo-tree.nix
-    ./floaterm.nix
-    ./gitsigns.nix
-    # ./neocord.nix
-    ./discordrpc.nix
-    ./better-escape.nix
-    ./wakatime.nix
-    ./lualine.nix
-    # ./mini.nix
+    ./keymaps.nix
+
+    ./bufferlines/bufferline.nix
+
+    ./colorschemes/colorscheme.nix
+
+    ./completion/cmp.nix
+
+    ./dap/dap.nix
+
+    ./filetrees/neo-tree.nix
+
+    ./git/gitsigns.nix
+    ./git/neogit.nix
+
+    ./languages/nvim-lint.nix
+    ./languages/treesitter/treesitter.nix
+    ./languages/treesitter/ts-autotag.nix
+
+    ./lsp/lsp.nix
+    ./lsp/conform.nix
+    ./lsp/trouble.nix
+
+    ./snippets/luasnip.nix
+
+    ./statusline/lualine.nix
+
+    ./telescope/telescope.nix
+
+    ./ui/noice.nix
+
+    ./utils/alpha.nix
+    ./utils/better-escape.nix
+    ./utils/discordrpc.nix
+    ./utils/flash.nix
+    ./utils/floaterm.nix
+    ./utils/harpoon.nix
+    ./utils/mini.nix
+    ./utils/nvim-colorizer.nix
+    ./utils/nvim-autopairs.nix
+    ./utils/persistence.nix
+    ./utils/todo-comments.nix
+    ./utils/tmux-navigator.nix
+    ./utils/undotree.nix
+    ./utils/wakatime.nix
+    ./utils/whichkey.nix
   ];
 }

@@ -1,5 +1,5 @@
 {
   plugins.mini = {
-    enable = true;
+    enable = false;
   };
 }
