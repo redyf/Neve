@@ -6,7 +6,6 @@
     };
   };
   keymaps = [
-    # -- go to next/previous buffer
     {
       mode = "n";
       key = "<Tab>";
@@ -16,6 +15,7 @@
         desc = "Cycle to next buffer";
       };
     }
+
     {
       mode = "n";
       key = "<S-Tab>";
@@ -25,6 +25,27 @@
         desc = "Cycle to previous buffer";
       };
     }
+
+    {
+      mode = "n";
+      key = "<S-l>";
+      action = "<cmd>BufferLineCycleNext<cr>";
+      options = {
+        silent = true;
+        desc = "Cycle to next buffer";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<S-h>";
+      action = "<cmd>BufferLineCyclePrev<cr>";
+      options = {
+        silent = true;
+        desc = "Cycle to previous buffer";
+      };
+    }
+
     {
       mode = "n";
       key = "<leader>bd";
@@ -34,6 +55,7 @@
         desc = "Delete buffer";
       };
     }
+
     {
       mode = "n";
       key = "<leader>br";
@@ -43,6 +65,7 @@
         desc = "Delete buffers to the right";
       };
     }
+
     {
       mode = "n";
       key = "<leader>bl";
@@ -52,6 +75,7 @@
         desc = "Delete buffers to the left";
       };
     }
+
     {
       mode = "n";
       key = "<leader>bo";
@@ -61,6 +85,7 @@
         desc = "Delete other buffers";
       };
     }
+
     {
       mode = "n";
       key = "<leader>bp";
@@ -70,6 +95,7 @@
         desc = "Toggle pin";
       };
     }
+
     {
       mode = "n";
       key = "<leader>bP";
