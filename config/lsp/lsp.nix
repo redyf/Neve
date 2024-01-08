@@ -29,16 +29,15 @@
         silent = true;
         lspBuf = {
           gd = "definition";
-          K = "hover";
-          gD = "declaration";
-          gT = "type_definition";
-          gi = "implementation";
           gr = "references";
-          "<leader>vrn" = "rename";
-          "<leader>vca" = "code_action";
-          "<leader>vrr" = "references";
-          "<leader>vws" = "workspace_symbol";
-          "<C-h>" = "signature_help";
+          gD = "declaration";
+          gI = "implementation";
+          gT = "type_definition";
+          K = "hover";
+          "<leader>cws" = "workspace_symbol";
+          "<leader>cr" = "rename";
+          "<leader>ca" = "code_action";
+          "<C-k>" = "signature_help";
         };
         diagnostic = {
           "<leader>cd" = "open_float";

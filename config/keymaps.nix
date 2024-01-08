@@ -52,6 +52,12 @@
       action = "+debug";
     }
 
+    {
+      mode = "n";
+      key = "<leader>c";
+      action = "+code";
+    }
+
     # Tabs
     {
       mode = "n";
