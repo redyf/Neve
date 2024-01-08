@@ -55,6 +55,7 @@
     ./utils/plenary.nix
     ./utils/todo-comments.nix
     ./utils/tmux-navigator.nix
+    ./utils/ts-context-commentstring.nix
     ./utils/undotree.nix
     ./utils/wakatime.nix
     ./utils/whichkey.nix
