@@ -24,11 +24,11 @@
   keymaps = [
     {
       mode = ["n" "v"];
-      key = "<leader>cF";
+      key = "<leader>cf";
       action = "<cmd>lua require('conform').format()<cr>";
       options = {
         silent = true;
-        desc = "Format Injected Langs";
+        desc = "Format";
       };
     }
   ];

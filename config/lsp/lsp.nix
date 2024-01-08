@@ -41,7 +41,7 @@
           "<C-h>" = "signature_help";
         };
         diagnostic = {
-          "<leader>vd" = "open_float";
+          "<leader>cd" = "open_float";
           "[d" = "goto_next";
           "]d" = "goto_prev";
         };

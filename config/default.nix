@@ -46,6 +46,7 @@
     ./utils/flash.nix
     ./utils/floaterm.nix
     ./utils/harpoon.nix
+    ./utils/markdown-preview.nix
     ./utils/mini.nix
     ./utils/nvim-colorizer.nix
     ./utils/nvim-autopairs.nix
