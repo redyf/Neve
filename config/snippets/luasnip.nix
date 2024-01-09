@@ -1,7 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
+{ pkgs
+, config
+, ...
 }: {
   plugins.luasnip = {
     enable = true;
@@ -18,7 +17,7 @@
   };
   keymaps = [
     {
-      mode = ["i" "s"];
+      mode = [ "i" "s" ];
       key = "<tab>";
       action = "<cmd>lua require('luasnip').jump(1)<cr>";
       options = {
@@ -26,7 +25,7 @@
       };
     }
     {
-      mode = ["i" "s"];
+      mode = [ "i" "s" ];
       key = "<s-tab>";
       action = "<cmd>lua require('luasnip').jump(-1)<cr>";
       options = {

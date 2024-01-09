@@ -23,7 +23,7 @@
     }
 
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>g";
       action = "+git";
     }
@@ -47,7 +47,7 @@
     }
 
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>d";
       action = "+debug";
     }
@@ -340,7 +340,7 @@
 
     # Copy stuff to system clipboard with <leader> + y or just y to have it just in vim
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>y";
       action = "\"+y";
       options = {
@@ -349,7 +349,7 @@
     }
 
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>Y";
       action = "\"+Y";
       options = {
@@ -359,7 +359,7 @@
 
     # Delete to void register
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>D";
       action = "\"_d";
       options = {
