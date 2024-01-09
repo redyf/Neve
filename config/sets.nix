@@ -14,9 +14,9 @@
     relativenumber = true;
 
     # Tab spacing
-    tabstop = 4; # insert 4 spaces for a tab
-    softtabstop = 4;
-    shiftwidth = 4; # insert 4 spaces for each indentation
+    tabstop = 2; # insert 4 spaces for a tab
+    softtabstop = 2;
+    shiftwidth = 2; # insert 4 spaces for each indentation
     expandtab = true;
 
     smartindent = true;
