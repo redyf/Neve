@@ -24,11 +24,16 @@
         };
       };
       formatting = {
-        alejandra = {
+        nixpkgs_fmt = {
           enable = true;
         };
         prettier_d_slim = {
           enable = true;
+          withArgs = ''
+            {
+              extra_args = { "--no-semi", "--single-quote" },
+            }
+          '';
         };
         rustfmt = {
           enable = true;
@@ -38,6 +43,11 @@
         };
         black = {
           enable = true;
+          withArgs = ''
+            {
+              extra_args = { "--fast" },
+            }
+          '';
         };
         jq = {
           enable = true;
@@ -49,7 +59,7 @@
     {
       mode = ["n" "v"];
       key = "<leader>cf";
-      action = "<cmd>lua require('conform').format()<cr>";
+      action = "<cmd>lua vim.lsp.buf.format()<cr>";
       options = {
         silent = true;
         desc = "Format";

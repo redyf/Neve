@@ -1,7 +1,8 @@
-{ inputs
-, self
-, pkgs
-, ...
+{
+  inputs,
+  self,
+  pkgs,
+  ...
 }: {
   # TODO: Implement code actions + more keybinds
 
@@ -42,6 +43,7 @@
 
     ./telescope/telescope.nix
 
+    ./ui/dressing-nvim.nix
     ./ui/noice.nix
     ./ui/nui.nix
 
