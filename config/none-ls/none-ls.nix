@@ -47,7 +47,7 @@
   };
   keymaps = [
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>cf";
       action = "<cmd>lua require('conform').format()<cr>";
       options = {

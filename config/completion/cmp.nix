@@ -7,7 +7,7 @@
         expand = "luasnip";
       };
       formatting = {
-        fields = ["kind" "abbr" "menu"];
+        fields = [ "kind" "abbr" "menu" ];
         format = ''
           function(entry, vim_item)
               vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
@@ -23,10 +23,10 @@
         '';
       };
       sources = [
-        {name = "path";}
-        {name = "nvim_lua";}
-        {name = "nvim_lsp";}
-        {name = "luasnip";}
+        { name = "path"; }
+        { name = "nvim_lua"; }
+        { name = "nvim_lsp"; }
+        { name = "luasnip"; }
         {
           name = "buffer";
           # Words from other open buffers can also be suggested.
@@ -35,8 +35,8 @@
       ];
 
       window = {
-        completion = {};
-        documentation = {};
+        completion = { };
+        documentation = { };
       };
 
       mapping = {
@@ -44,7 +44,7 @@
           action = "cmp.mapping.confirm({ select = true })";
         };
         "<Tab>" = {
-          modes = ["i" "s"];
+          modes = [ "i" "s" ];
           action = ''
             function(fallback)
               if cmp.visible() then
