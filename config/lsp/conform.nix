@@ -10,8 +10,8 @@
       lua = ["stylua"];
       python = ["black"];
       nix = ["alejandra"];
-      html = ["prettierd" "prettier"];
-      css = ["prettierd" "prettier"];
+      html = [["prettierd" "prettier"]];
+      css = [["prettierd" "prettier"]];
       javascript = [["prettierd" "prettier"]];
       javascriptreact = [["prettierd" "prettier"]];
       typescript = [["prettierd" "prettier"]];
@@ -23,7 +23,7 @@
 
   keymaps = [
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>cf";
       action = "<cmd>lua require('conform').format()<cr>";
       options = {
