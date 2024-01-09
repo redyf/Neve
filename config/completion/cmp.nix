@@ -7,7 +7,7 @@
         expand = "luasnip";
       };
       formatting = {
-        fields = [ "kind" "abbr" "menu" ];
+        fields = ["kind" "abbr" "menu"];
         format = ''
           function(entry, vim_item)
               vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
@@ -23,10 +23,10 @@
         '';
       };
       sources = [
-        { name = "path"; }
-        { name = "nvim_lua"; }
-        { name = "nvim_lsp"; }
-        { name = "luasnip"; }
+        {name = "path";}
+        {name = "nvim_lua";}
+        {name = "nvim_lsp";}
+        {name = "luasnip";}
         {
           name = "buffer";
           # Words from other open buffers can also be suggested.
@@ -35,35 +35,53 @@
       ];
 
       window = {
-        completion = { };
-        documentation = { };
+        completion = {};
+        documentation = {};
       };
 
       mapping = {
-        "<C-n>" = {
-          action = "cmp.mapping.select_next_item()";
-        };
-        "<C-p>" = {
-          action = "cmp.mapping.select_prev_item()";
-        };
-        "<C-b>" = {
-          action = "cmp.mapping.scroll_docs(-4)";
-        };
-        "<C-f>" = {
-          action = "cmp.mapping.scroll_docs(4)";
-        };
-        "<C-Space>" = {
-          action = "cmp.mapping.complete()";
-        };
-        "<C-e>" = {
-          action = "cmp.mapping.abort()";
-        };
         "<CR>" = {
           action = "cmp.mapping.confirm({ select = true })";
         };
-        "<S-CR>" = {
-          action = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+        "<Tab>" = {
+          modes = ["i" "s"];
+          action = ''
+            function(fallback)
+              if cmp.visible() then
+                cmp.select_next_item()
+              elseif luasnip.expandable() then
+                luasnip.expand()
+              elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+              elseif check_backspace() then
+                fallback()
+              else
+                fallback()
+              end
+            end
+          '';
         };
+        # "<C-n>" = {
+        #   action = "cmp.mapping.select_next_item()";
+        # };
+        # "<C-p>" = {
+        #   action = "cmp.mapping.select_prev_item()";
+        # };
+        # "<C-b>" = {
+        #   action = "cmp.mapping.scroll_docs(-4)";
+        # };
+        # "<C-f>" = {
+        #   action = "cmp.mapping.scroll_docs(4)";
+        # };
+        # "<C-Space>" = {
+        #   action = "cmp.mapping.complete()";
+        # };
+        # "<C-e>" = {
+        #   action = "cmp.mapping.abort()";
+        # };
+        # "<S-CR>" = {
+        #   action = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+        # };
       };
     };
     cmp-buffer = {
