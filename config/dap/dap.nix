@@ -1,7 +1,7 @@
 {
   plugins.dap = {
     enable = true;
-    adapters = {};
+    adapters = { };
     signs = {
       dapBreakpoint = {
         text = "●";
@@ -23,7 +23,7 @@
       dap-ui = {
         enable = true;
         floating.mappings = {
-          close = ["<ESC>" "q"];
+          close = [ "<ESC>" "q" ];
         };
       };
       dap-virtual-text = {
@@ -200,7 +200,7 @@
       };
     }
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>du";
       action = "<cmd>lua require('dapui').eval()<cr>";
       options = {

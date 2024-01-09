@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  host,
-  user,
-  ...
+{ config
+, pkgs
+, host
+, user
+, ...
 }: {
   plugins.undotree = {
     enable = true;
