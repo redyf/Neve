@@ -1,8 +1,7 @@
-{
-  inputs,
-  self,
-  pkgs,
-  ...
+{ inputs
+, self
+, pkgs
+, ...
 }: {
   # TODO: Implement code actions + more keybinds
 
