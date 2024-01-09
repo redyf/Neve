@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  # TODO: Implement code actions
+  # TODO: Implement code actions + more keybinds
 
   # Import all your configuration modules here
   imports = [
@@ -16,6 +16,7 @@
     ./colorschemes/colorscheme.nix
 
     ./completion/cmp.nix
+    ./completion/copilot.nix
 
     ./dap/dap.nix
 
@@ -26,6 +27,7 @@
     ./git/neogit.nix
 
     ./languages/nvim-lint.nix
+    ./languages/typescript-tools-nvim.nix
     ./languages/treesitter/treesitter.nix
     ./languages/treesitter/ts-autotag.nix
 
