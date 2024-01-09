@@ -42,6 +42,7 @@
 
     ./telescope/telescope.nix
 
+    ./ui/dressing-nvim.nix
     ./ui/noice.nix
     ./ui/nui.nix
 

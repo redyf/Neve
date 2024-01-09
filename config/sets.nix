@@ -38,8 +38,7 @@
     signcolumn = "yes";
     updatetime = 50; # faster completion (4000ms default)
     colorcolumn = "80";
-    # Mouse
-    mouse = "a";
+    mouse = "a"; # Mouse
     timeoutlen = 10;
     encoding = "utf-8";
     fileencoding = "utf-8";
