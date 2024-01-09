@@ -59,7 +59,7 @@
       };
     }
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>ghr";
       action = "Gitsigns reset_hunk";
       options = {
@@ -68,7 +68,7 @@
       };
     }
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>ghs";
       action = "Gitsigns stage_hunk";
       options = {

@@ -3,16 +3,16 @@
     lsp = {
       enable = true;
       servers = {
-        clangd = {enable = true;};
-        lua-ls = {enable = true;};
-        nixd = {enable = true;};
+        clangd = { enable = true; };
+        lua-ls = { enable = true; };
+        nixd = { enable = true; };
         tsserver = {
           enable = true;
-          filetypes = ["javascript" "javascriptreact" "typescript" "typescriptreact"];
+          filetypes = [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
         };
-        eslint = {enable = true;};
-        pyright = {enable = true;};
-        ruff-lsp = {enable = true;};
+        eslint = { enable = true; };
+        pyright = { enable = true; };
+        ruff-lsp = { enable = true; };
 
         rust-analyzer = {
           enable = true;

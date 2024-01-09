@@ -1,10 +1,9 @@
-{
-  lib,
-  helpers,
-  config,
-  pkgs,
-  inputs,
-  ...
+{ lib
+, helpers
+, config
+, pkgs
+, inputs
+, ...
 }:
 with lib; let
   extraPlugins = with pkgs.vimPlugins; [
@@ -20,7 +19,8 @@ with lib; let
     })
   ];
   cfg = config.plugins.neocord;
-in {
+in
+{
   options = {
     plugins.neocord =
       helpers.extraOptionsOptions
@@ -35,15 +35,15 @@ in {
           `:lua package.loaded.neocord:update()`
         '';
 
-        logo = helpers.defaultNullOpts.mkEnum ["auto" "url"] ''
+        logo = helpers.defaultNullOpts.mkEnum [ "auto" "url" ] ''
           Update the Logo to the specified option ("auto" or url).
         '';
 
-        logoTooltip = helpers.defaultNullOpts.mkEnum ["null" "string"] ''
+        logoTooltip = helpers.defaultNullOpts.mkEnum [ "null" "string" ] ''
           Sets the logo tooltip
         '';
 
-        mainImage = helpers.defaultNullOpts.mkEnum ["language" "logo"] "language" ''
+        mainImage = helpers.defaultNullOpts.mkEnum [ "language" "logo" ] "language" ''
           Main image display (either "language" or "logo")
         '';
 
@@ -51,7 +51,7 @@ in {
           Use your own Discord application client id. (not recommended)
         '';
 
-        logLevel = helpers.defaultNullOpts.mkEnum ["debug" "info" "warn" "error"] "null" ''
+        logLevel = helpers.defaultNullOpts.mkEnum [ "debug" "info" "warn" "error" ] "null" ''
           Log messages at or above this level.
         '';
 
@@ -71,25 +71,25 @@ in {
 
         buttons =
           helpers.defaultNullOpts.mkNullable
-          (types.either helpers.nixvimTypes.rawLua
-            (types.listOf (types.submodule {
-              options = {
-                label = helpers.mkNullOrOption types.str "";
-                url = helpers.mkNullOrOption types.str "";
-              };
-            })))
-          "[]"
-          ''
-            Button configurations which will always appear in Rich Presence.
+            (types.either helpers.nixvimTypes.rawLua
+              (types.listOf (types.submodule {
+                options = {
+                  label = helpers.mkNullOrOption types.str "";
+                  url = helpers.mkNullOrOption types.str "";
+                };
+              })))
+            "[]"
+            ''
+              Button configurations which will always appear in Rich Presence.
 
-            Can be a list of attribute sets, each with the following attributes:
+              Can be a list of attribute sets, each with the following attributes:
 
-            `label`: The label of the button. e.g. `"GitHub Profile"`.
+              `label`: The label of the button. e.g. `"GitHub Profile"`.
 
-            `url`: The URL the button leads to. e.g. `"https://github.com/<NAME>"`.
+              `url`: The URL the button leads to. e.g. `"https://github.com/<NAME>"`.
 
-            Can also be a lua function: `function(buffer: string, repo_url: string|nil): table`
-          '';
+              Can also be a lua function: `function(buffer: string, repo_url: string|nil): table`
+            '';
 
         fileAssets = helpers.mkNullOrOption (with types; attrsOf (listOf str)) ''
           Custom file asset definitions keyed by file names and extensions.
@@ -171,35 +171,36 @@ in {
       };
   };
 
-  config = let
-    setupOptions =
-      {
-        # General options.
-        auto_update = cfg.autoUpdate;
-        inherit (cfg) logo;
-        inherit (cfg) logo_tooltip;
-        main_image = cfg.mainImage;
-        client_id = cfg.clientId;
-        log_level = cfg.logLevel;
-        debounce_timeout = cfg.debounceTimeout;
-        enable_line_number = cfg.enableLineNumber;
-        inherit (cfg) blacklist;
-        file_assets = cfg.fileAssets;
-        show_time = cfg.showTime;
-        inherit (cfg) buttons;
+  config =
+    let
+      setupOptions =
+        {
+          # General options.
+          auto_update = cfg.autoUpdate;
+          inherit (cfg) logo;
+          inherit (cfg) logo_tooltip;
+          main_image = cfg.mainImage;
+          client_id = cfg.clientId;
+          log_level = cfg.logLevel;
+          debounce_timeout = cfg.debounceTimeout;
+          enable_line_number = cfg.enableLineNumber;
+          inherit (cfg) blacklist;
+          file_assets = cfg.fileAssets;
+          show_time = cfg.showTime;
+          inherit (cfg) buttons;
 
-        # Rich presence text options.
-        editing_text = cfg.editingText;
-        file_explorer_text = cfg.fileExplorerText;
-        git_commit_text = cfg.gitCommitText;
-        plugin_manager_text = cfg.pluginManagerText;
-        reading_text = cfg.readingText;
-        workspace_text = cfg.workspaceText;
-        line_number_text = cfg.lineNumberText;
-        terminal_text = cfg.terminalText;
-      }
-      // cfg.extraOptions;
-  in
+          # Rich presence text options.
+          editing_text = cfg.editingText;
+          file_explorer_text = cfg.fileExplorerText;
+          git_commit_text = cfg.gitCommitText;
+          plugin_manager_text = cfg.pluginManagerText;
+          reading_text = cfg.readingText;
+          workspace_text = cfg.workspaceText;
+          line_number_text = cfg.lineNumberText;
+          terminal_text = cfg.terminalText;
+        }
+        // cfg.extraOptions;
+    in
     mkIf cfg.enable {
       extraPlugins = [
         cfg.package
