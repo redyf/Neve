@@ -4,7 +4,6 @@
   inputs = {
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
-    neocord.url = "github:IogaMaster/neocord";
   };
 
   outputs = {
@@ -12,7 +11,6 @@
     nixpkgs,
     nixvim,
     flake-utils,
-    neocord,
     ...
   } @ inputs: let
     config = import ./config; # import the module directly
@@ -42,5 +40,7 @@
         # Lets you run `nix run .` to start nixvim
         default = nvim;
       };
+
+      formatter = pkgs.nixpkgs-fmt;
     });
 }
