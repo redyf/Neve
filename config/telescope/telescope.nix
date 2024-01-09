@@ -93,6 +93,10 @@
         action = "resume, {}";
         desc = "Resume";
       };
+      "<leader>uC" = {
+        action = "colorscheme, {}";
+        desc = "Colorscheme preview";
+      };
     };
   };
   keymaps = [
