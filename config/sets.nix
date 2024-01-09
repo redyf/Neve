@@ -1,7 +1,8 @@
-{ pkgs
-, lib
-, config
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  ...
 }: {
   globalOptions = {
     # Block cursor
@@ -20,7 +21,7 @@
 
     smartindent = true;
 
-    wrap = false;
+    wrap = true;
 
     # Undo stuff from days ago
     swapfile = false;
