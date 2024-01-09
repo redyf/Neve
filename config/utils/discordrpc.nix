@@ -15,7 +15,7 @@
   extraConfigLua = ''
     require("neocord").setup({
         -- General options
-        logo                = "https://static-00.iconduck.com/assets.00/apps-neovim-icon-512x512-w4ecv3uh.png", -- "auto" or url
+        logo                = "https://repository-images.githubusercontent.com/325421844/ecb73f47-cb89-4ee0-a0fd-9743c2f3569a", -- "auto" or url
         logo_tooltip        = "Nixvim", -- nil or string
         main_image          = "logo", -- "language" or "logo"
         client_id           = "1157438221865717891",       -- Use your own Discord application client id (not recommended)
