@@ -4,11 +4,11 @@
     layout = [
       {
         type = "padding";
-        val = 1;
+        val = 8;
       }
       {
         opts = {
-          hl = "Identifier";
+          hl = "Type";
           position = "center";
         };
         type = "text";
@@ -23,7 +23,7 @@
           "     ░░   ░    ░    ░ ░  ░ ▒ ▒ ░░   ░ ░     "
           "      ░        ░  ░   ░    ░ ░              "
           "                                            "
-          "              git@github.com:Redyf          "
+          "              git@github.com:redyf          "
         ];
         # val = [
         #   "          ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖         "
@@ -47,7 +47,7 @@
         #   "         ▟███▛  ▜███▙       ▜███▙          "
         #   "         ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘          "
         #   "                                           "
-        #   "            git@github.com:Redyf           "
+        #   "            git@github.com:redyf           "
         # ];
       }
       {
@@ -59,29 +59,34 @@
         val = [
           {
             command = "<CMD>Telescope find_files<CR>";
-            desc = "  Find File";
+            desc = "  Find file";
             shortcut = "f";
           }
+
           {
             command = ":ene <BAR> startinsert <CR>";
-            desc = "  New File";
+            desc = "  New file";
             shortcut = "n";
           }
+
           {
             command = ":Telescope oldfiles <CR>";
             desc = "  Recent files";
             shortcut = "r";
           }
+
           {
             command = ":Telescope live_grep <CR>";
             desc = "  Find text";
             shortcut = "g";
           }
+
           {
             command = ":lua require('persistence').load()<cr>";
             desc = "  Restore Session";
             shortcut = "s";
           }
+
           {
             command = ":qa<CR>";
             desc = "  Quit Neovim";

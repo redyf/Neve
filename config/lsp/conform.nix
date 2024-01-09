@@ -1,6 +1,6 @@
 {
   plugins.conform-nvim = {
-    enable = true;
+    enable = false;
     formatOnSave = {
       lspFallback = true;
       timeoutMs = 500;
@@ -21,15 +21,15 @@
     };
   };
 
-  keymaps = [
-    {
-      mode = [ "n" "v" ];
-      key = "<leader>cf";
-      action = "<cmd>lua require('conform').format()<cr>";
-      options = {
-        silent = true;
-        desc = "Format";
-      };
-    }
-  ];
+  # keymaps = [
+  # {
+  #   mode = ["n" "v"];
+  #   key = "<leader>cf";
+  #   action = "<cmd>lua require('conform').format()<cr>";
+  #   options = {
+  #     silent = true;
+  #     desc = "Format";
+  #   };
+  # }
+  # ];
 }

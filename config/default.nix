@@ -1,8 +1,7 @@
-{
-  inputs,
-  self,
-  pkgs,
-  ...
+{ inputs
+, self
+, pkgs
+, ...
 }: {
   # TODO: Implement code actions + more keybinds
 
@@ -35,6 +34,8 @@
     ./lsp/conform.nix
     ./lsp/trouble.nix
 
+    ./none-ls/none-ls.nix
+
     ./snippets/luasnip.nix
 
     ./statusline/lualine.nix
@@ -42,6 +43,7 @@
     ./telescope/telescope.nix
 
     ./ui/noice.nix
+    ./ui/nui.nix
 
     ./utils/alpha.nix
     ./utils/better-escape.nix
