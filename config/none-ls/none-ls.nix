@@ -1,7 +1,7 @@
 {
   plugins.none-ls = {
     enable = true;
-    enableLspFormat = false;
+    enableLspFormat = true;
     updateInInsert = false;
     sources = {
       code_actions = {
