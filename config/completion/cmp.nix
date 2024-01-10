@@ -3,11 +3,16 @@
     nvim-cmp = {
       enable = true;
       autoEnableSources = true;
+      performance = {
+        debounce = 60;
+        fetchingTimeout = 200;
+        maxViewEntries = 30;
+      };
       snippet = {
         expand = "luasnip";
       };
       formatting = {
-        fields = [ "kind" "abbr" "menu" ];
+        fields = ["kind" "abbr" "menu"];
         format = ''
           function(entry, vim_item)
               vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
@@ -23,65 +28,89 @@
         '';
       };
       sources = [
-        { name = "path"; }
-        { name = "nvim_lua"; }
-        { name = "nvim_lsp"; }
-        { name = "luasnip"; }
+        {
+          name = "nvim_lsp";
+          keywordLength = 1;
+        }
+        {
+          name = "luasnip";
+          keywordLength = 1;
+        }
         {
           name = "buffer";
           # Words from other open buffers can also be suggested.
           option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+          keywordLength = 2;
+        }
+        {
+          name = "path";
+          keywordLength = 2;
         }
       ];
 
       window = {
-        completion = { };
-        documentation = { };
+        completion = {
+          border = "rounded";
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+        };
+        documentation = {
+          border = "rounded";
+        };
       };
 
       mapping = {
-        "<CR>" = {
-          action = "cmp.mapping.confirm({ select = true })";
-        };
         "<Tab>" = {
-          modes = [ "i" "s" ];
+          modes = ["i" "s"];
           action = ''
-            function(fallback)
-              if cmp.visible() then
-                cmp.select_next_item()
-              elseif luasnip.expandable() then
-                luasnip.expand()
-              elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              elseif check_backspace() then
-                fallback()
-              else
-                fallback()
-              end
+             function(fallback)
+             	if cmp.visible() then
+            		cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+            	luasnip.expand_or_jump()
+            else
+            fallback()
+                 end
             end
           '';
         };
-        # "<C-n>" = {
-        #   action = "cmp.mapping.select_next_item()";
-        # };
-        # "<C-p>" = {
-        #   action = "cmp.mapping.select_prev_item()";
-        # };
-        # "<C-b>" = {
-        #   action = "cmp.mapping.scroll_docs(-4)";
-        # };
-        # "<C-f>" = {
-        #   action = "cmp.mapping.scroll_docs(4)";
-        # };
-        # "<C-Space>" = {
-        #   action = "cmp.mapping.complete()";
-        # };
-        # "<C-e>" = {
-        #   action = "cmp.mapping.abort()";
-        # };
-        # "<S-CR>" = {
-        #   action = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
-        # };
+        "<S-Tab>" = {
+          modes = ["i" "s"];
+          action = ''
+                 function(fallback)
+            	if cmp.visible() then
+            		cmp.select_prev_item()
+            	elseif luasnip.jumpable(-1) then
+            		luasnip.jump(-1)
+            	else
+            		fallback()
+            	end
+            end
+          '';
+        };
+        "<C-n>" = {
+          action = "cmp.mapping.select_next_item()";
+        };
+        "<C-p>" = {
+          action = "cmp.mapping.select_prev_item()";
+        };
+        "<C-e>" = {
+          action = "cmp.mapping.abort()";
+        };
+        "<C-b>" = {
+          action = "cmp.mapping.scroll_docs(-4)";
+        };
+        "<C-f>" = {
+          action = "cmp.mapping.scroll_docs(4)";
+        };
+        "<C-Space>" = {
+          action = "cmp.mapping.complete()";
+        };
+        "<CR>" = {
+          action = "cmp.mapping.confirm({ select = true })";
+        };
+        "<S-CR>" = {
+          action = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+        };
       };
     };
     cmp-buffer = {
@@ -101,50 +130,43 @@
     };
   };
   extraConfigLua = ''
-             luasnip = require("luasnip")
-             kind_icons = {
-               Text = "󰊄",
-               Method = "",
-               Function = "󰡱",
-               Constructor = "",
-               Field = "",
-               Variable = "󱀍",
-               Class = "",
-               Interface = "",
-               Module = "󰕳",
-               Property = "",
-               Unit = "",
-               Value = "",
-               Enum = "",
-               Keyword = "",
-               Snippet = "",
-               Color = "",
-               File = "",
-               Reference = "",
-               Folder = "",
-               EnumMember = "",
-               Constant = "",
-               Struct = "",
-               Event = "",
-               Operator = "",
-               TypeParameter = "",
-             }-- find more here: https://www.nerdfonts.com/cheat-sheet
+     luasnip = require("luasnip")
+     kind_icons = {
+       Text = "󰊄",
+       Method = "",
+       Function = "󰡱",
+       Constructor = "",
+       Field = "",
+       Variable = "󱀍",
+       Class = "",
+       Interface = "",
+       Module = "󰕳",
+       Property = "",
+       Unit = "",
+       Value = "",
+       Enum = "",
+       Keyword = "",
+       Snippet = "",
+       Color = "",
+       File = "",
+       Reference = "",
+       Folder = "",
+       EnumMember = "",
+       Constant = "",
+       Struct = "",
+       Event = "",
+       Operator = "",
+       TypeParameter = "",
+     }-- find more here: https://www.nerdfonts.com/cheat-sheet
 
-              local cmp = require'cmp'
-     cmp.setup({
-    window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-    },
-     })
-
-              cmp.setup.cmdline(":", {
-              mapping = cmp.mapping.preset.cmdline(),
-              sources = cmp.config.sources({
-                  { name = "path" },
-              }, {
-                  { name = "cmdline" },
-              }),
-            })
+      local cmp = require'cmp'
+      cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+          { name = "path" },
+      }, {
+          { name = "cmdline" },
+      }),
+    })
   '';
 }
