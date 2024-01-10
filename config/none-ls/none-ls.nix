@@ -1,7 +1,7 @@
 {
   plugins.none-ls = {
     enable = true;
-    enableLspFormat = false;
+    enableLspFormat = true;
     updateInInsert = false;
     sources = {
       code_actions = {
@@ -57,7 +57,7 @@
   };
   keymaps = [
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>cf";
       action = "<cmd>lua vim.lsp.buf.format()<cr>";
       options = {
