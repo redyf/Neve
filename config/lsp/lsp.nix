@@ -10,7 +10,7 @@
         lua-ls = { enable = true; };
         nixd = { enable = true; };
         tsserver = {
-          enable = true;
+          enable = false;
           filetypes = [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
         };
         eslint = { enable = true; };
