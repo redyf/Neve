@@ -11,7 +11,6 @@
       key = "<Tab>";
       action = "<cmd>BufferLineCycleNext<cr>";
       options = {
-        silent = true;
         desc = "Cycle to next buffer";
       };
     }
@@ -21,7 +20,6 @@
       key = "<S-Tab>";
       action = "<cmd>BufferLineCyclePrev<cr>";
       options = {
-        silent = true;
         desc = "Cycle to previous buffer";
       };
     }
@@ -31,7 +29,6 @@
       key = "<S-l>";
       action = "<cmd>BufferLineCycleNext<cr>";
       options = {
-        silent = true;
         desc = "Cycle to next buffer";
       };
     }
@@ -41,7 +38,6 @@
       key = "<S-h>";
       action = "<cmd>BufferLineCyclePrev<cr>";
       options = {
-        silent = true;
         desc = "Cycle to previous buffer";
       };
     }
@@ -51,8 +47,25 @@
       key = "<leader>bd";
       action = "<cmd>bdelete<cr>";
       options = {
-        silent = true;
         desc = "Delete buffer";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>bb";
+      action = "<cmd>e #<cr>";
+      options = {
+        desc = "Switch to Other Buffer";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>`";
+      action = "<cmd>e #<cr>";
+      options = {
+        desc = "Switch to Other Buffer";
       };
     }
 
@@ -61,7 +74,6 @@
       key = "<leader>br";
       action = "<cmd>BufferLineCloseRight<cr>";
       options = {
-        silent = true;
         desc = "Delete buffers to the right";
       };
     }
@@ -71,7 +83,6 @@
       key = "<leader>bl";
       action = "<cmd>BufferLineCloseLeft<cr>";
       options = {
-        silent = true;
         desc = "Delete buffers to the left";
       };
     }
@@ -81,7 +92,6 @@
       key = "<leader>bo";
       action = "<cmd>BufferLineCloseOthers<cr>";
       options = {
-        silent = true;
         desc = "Delete other buffers";
       };
     }
@@ -91,7 +101,6 @@
       key = "<leader>bp";
       action = "<cmd>BufferLineTogglePin<cr>";
       options = {
-        silent = true;
         desc = "Toggle pin";
       };
     }
@@ -101,7 +110,6 @@
       key = "<leader>bP";
       action = "<Cmd>BufferLineGroupClose ungrouped<CR>";
       options = {
-        silent = true;
         desc = "Delete non-pinned buffers";
       };
     }

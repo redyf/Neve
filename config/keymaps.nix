@@ -189,7 +189,6 @@
         desc = "Save file";
       };
     }
-
     # Quit/Session
     {
       mode = "n";

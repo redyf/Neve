@@ -9,7 +9,7 @@
     formattersByFt = {
       lua = [ "stylua" ];
       python = [ "black" ];
-      nix = [ "alejandra" ];
+      nix = [ "nixpkgs_fmt" ];
       html = [ [ "prettierd" "prettier" ] ];
       css = [ [ "prettierd" "prettier" ] ];
       javascript = [ [ "prettierd" "prettier" ] ];
