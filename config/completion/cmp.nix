@@ -40,11 +40,11 @@
           name = "buffer";
           # Words from other open buffers can also be suggested.
           option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          keywordLength = 2;
+          keywordLength = 3;
         }
         {
           name = "path";
-          keywordLength = 2;
+          keywordLength = 3;
         }
       ];
 
@@ -117,9 +117,6 @@
       enable = true;
     };
     cmp_luasnip = {
-      enable = true;
-    };
-    cmp-nvim-lua = {
       enable = true;
     };
     cmp-nvim-lsp = {
