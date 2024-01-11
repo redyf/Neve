@@ -51,7 +51,7 @@
     ./utils/better-escape.nix
     ./utils/discordrpc.nix
     ./utils/flash.nix
-    ./utils/floaterm.nix
+    ./utils/toggleterm.nix
     ./utils/harpoon.nix
     ./utils/markdown-preview.nix
     ./utils/mini.nix
