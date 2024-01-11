@@ -4,11 +4,11 @@
     layout = [
       {
         type = "padding";
-        val = 8;
+        val = 4;
       }
       {
         opts = {
-          hl = "Type";
+          hl = "AlphaHeader";
           position = "center";
         };
         type = "text";
@@ -55,6 +55,11 @@
         val = 2;
       }
       {
+        opts = {
+          hl = "AlphaButtons";
+          position = "center";
+          spacing = 1;
+        };
         type = "group";
         val = [
           {
