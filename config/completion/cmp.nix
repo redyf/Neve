@@ -12,7 +12,7 @@
         expand = "luasnip";
       };
       formatting = {
-        fields = ["kind" "abbr" "menu"];
+        fields = [ "kind" "abbr" "menu" ];
         format = ''
           function(entry, vim_item)
               vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
@@ -60,7 +60,7 @@
 
       mapping = {
         "<Tab>" = {
-          modes = ["i" "s"];
+          modes = [ "i" "s" ];
           action = ''
              function(fallback)
              	if cmp.visible() then
@@ -74,7 +74,7 @@
           '';
         };
         "<S-Tab>" = {
-          modes = ["i" "s"];
+          modes = [ "i" "s" ];
           action = ''
                  function(fallback)
             	if cmp.visible() then
