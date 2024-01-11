@@ -201,7 +201,7 @@
     }
     {
       mode = [ "n" "v" ];
-      key = "<leader>du";
+      key = "<leader>de";
       action = "<cmd>lua require('dapui').eval()<cr>";
       options = {
         silent = true;

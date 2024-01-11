@@ -8,6 +8,9 @@
     window = {
       width = 30;
       autoExpandWidth = true;
+      mappings = {
+        "<space>" = "none";
+      };
     };
   };
 
@@ -15,7 +18,7 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = ":Neotree<CR>";
+      action = "<cmd>Neotree toggle<CR>";
       options = {
         silent = true;
         desc = "Explorer NeoTree (root dir)";
