@@ -28,6 +28,7 @@
     ./languages/nvim-lint.nix
     ./languages/typescript-tools-nvim.nix
     ./languages/treesitter/treesitter.nix
+    ./languages/treesitter/treesitter-textobjects.nix
     ./languages/treesitter/ts-autotag.nix
 
     ./lsp/lsp.nix

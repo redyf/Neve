@@ -15,22 +15,4 @@
       }
     ];
   };
-  keymaps = [
-    {
-      mode = [ "i" "s" ];
-      key = "<tab>";
-      action = "<cmd>lua require('luasnip').jump(1)<cr>";
-      options = {
-        silent = true;
-      };
-    }
-    {
-      mode = [ "i" "s" ];
-      key = "<s-tab>";
-      action = "<cmd>lua require('luasnip').jump(-1)<cr>";
-      options = {
-        silent = true;
-      };
-    }
-  ];
 }
