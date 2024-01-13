@@ -30,6 +30,7 @@
     ./languages/treesitter/treesitter.nix
     ./languages/treesitter/treesitter-textobjects.nix
     ./languages/treesitter/ts-autotag.nix
+    ./languages/treesitter/ts-context-commentstring.nix
 
     ./lsp/lsp.nix
     ./lsp/conform.nix
@@ -51,17 +52,17 @@
     ./utils/better-escape.nix
     ./utils/discordrpc.nix
     ./utils/flash.nix
-    ./utils/toggleterm.nix
     ./utils/harpoon.nix
     ./utils/markdown-preview.nix
     ./utils/mini.nix
-    ./utils/nvim-colorizer.nix
     ./utils/nvim-autopairs.nix
+    ./utils/nvim-colorizer.nix
+    ./utils/nvim-surround.nix
     ./utils/persistence.nix
     ./utils/plenary.nix
-    ./utils/todo-comments.nix
     ./utils/tmux-navigator.nix
-    ./utils/ts-context-commentstring.nix
+    ./utils/todo-comments.nix
+    ./utils/toggleterm.nix
     ./utils/undotree.nix
     ./utils/vim-startuptime.nix
     ./utils/wakatime.nix
