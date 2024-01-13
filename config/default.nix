@@ -63,6 +63,7 @@
     ./utils/tmux-navigator.nix
     ./utils/ts-context-commentstring.nix
     ./utils/undotree.nix
+    ./utils/vim-startuptime.nix
     ./utils/wakatime.nix
     ./utils/whichkey.nix
   ];
