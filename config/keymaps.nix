@@ -160,25 +160,25 @@
       };
     }
 
-    {
-      mode = "n";
-      key = "<leader>-";
-      action = "<C-W>s";
-      options = {
-        silent = true;
-        desc = "Split window below";
-      };
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>-";
+    #   action = "<C-W>s";
+    #   options = {
+    #     silent = true;
+    #     desc = "Split window below";
+    #   };
+    # }
 
-    {
-      mode = "n";
-      key = "<leader>|";
-      action = "<C-W>v";
-      options = {
-        silent = true;
-        desc = "Split window right";
-      };
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>|";
+    #   action = "<C-W>v";
+    #   options = {
+    #     silent = true;
+    #     desc = "Split window right";
+    #   };
+    # }
 
     {
       mode = "n";
@@ -189,6 +189,7 @@
         desc = "Save file";
       };
     }
+
     # Quit/Session
     {
       mode = "n";
