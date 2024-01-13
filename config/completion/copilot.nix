@@ -6,7 +6,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>oc";
+      key = "<leader>to";
       action = "<cmd>:Copilot panel<cr>";
       options = {
         silent = true;

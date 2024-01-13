@@ -58,6 +58,12 @@
       action = "+code";
     }
 
+    {
+      mode = "n";
+      key = "<leader>t";
+      action = "+copilot";
+    }
+
     # Tabs
     {
       mode = "n";
