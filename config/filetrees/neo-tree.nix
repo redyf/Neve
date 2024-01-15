@@ -1,13 +1,22 @@
 {
   plugins.neo-tree = {
     enable = true;
+    enableDiagnostics = true;
     enableGitStatus = true;
     enableModifiedMarkers = true;
     enableRefreshOnWrite = true;
     closeIfLastWindow = true;
+    popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+    buffers = {
+      bindToCwd = false;
+      followCurrentFile = {
+        enabled = true;
+      };
+    };
     window = {
-      width = 30;
-      autoExpandWidth = true;
+      width = 40;
+      height = 15;
+      autoExpandWidth = false;
       mappings = {
         "<space>" = "none";
       };
@@ -18,7 +27,7 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = "<cmd>Neotree toggle<CR>";
+      action = ":Neotree toggle reveal_force_cwd<cr>";
       options = {
         silent = true;
         desc = "Explorer NeoTree (root dir)";
@@ -27,7 +36,7 @@
     {
       mode = "n";
       key = "<leader>E";
-      action = ":Neotree revel_force_cwd<CR>";
+      action = "<cmd>Neotree toggle<CR>";
       options = {
         silent = true;
         desc = "Explorer NeoTree (cwd)";

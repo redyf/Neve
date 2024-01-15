@@ -46,6 +46,7 @@
 
     ./ui/dressing-nvim.nix
     ./ui/noice.nix
+    ./ui/nvim-notify.nix
     ./ui/nui.nix
 
     ./utils/alpha.nix
@@ -64,7 +65,6 @@
     ./utils/todo-comments.nix
     ./utils/toggleterm.nix
     ./utils/undotree.nix
-    ./utils/vim-startuptime.nix
     ./utils/wakatime.nix
     ./utils/whichkey.nix
   ];
