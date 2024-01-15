@@ -1,6 +1,6 @@
 {
   plugins.lint = {
-    enable = false;
+    enable = true;
     lintersByFt = {
       nix = [ "statix" ];
       lua = [ "selene" ];

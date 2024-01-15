@@ -46,6 +46,7 @@
 
     ./ui/dressing-nvim.nix
     ./ui/noice.nix
+    ./ui/nvim-notify.nix
     ./ui/nui.nix
 
     ./utils/alpha.nix

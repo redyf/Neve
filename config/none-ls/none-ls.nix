@@ -1,6 +1,6 @@
 {
   plugins.none-ls = {
-    enable = true;
+    enable = false;
     enableLspFormat = true;
     updateInInsert = false;
     sources = {
