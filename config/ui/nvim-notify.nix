@@ -4,7 +4,7 @@
     backgroundColour = "#000000";
     fps = 60;
     render = "default";
-    timeout = 4000;
+    timeout = 3000;
   };
   keymaps = [
     {

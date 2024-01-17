@@ -2,12 +2,12 @@
   extraPlugins = with pkgs.vimPlugins; [
     (pkgs.vimUtils.buildVimPlugin {
       pname = "neocord";
-      version = "2024-01-03";
+      version = "2024-01-11";
       src = pkgs.fetchFromGitHub {
         owner = "IogaMaster";
         repo = "neocord";
-        rev = "7351eba601fc445ea2f44d5016f3a1df66b93565";
-        sha256 = "1pcnvpyg0pylvbyvcx85zpab7l9sjx7gncw2sgnp9n4cds52fgmb";
+        rev = "9b624d5189f699ab454e9515262c13965395b8dd";
+        sha256 = "0kvii7w1yqrzfidwky4ljmmsr33pciz1rw9v3kqf0ck36clqqxhy";
       };
     })
   ];
@@ -27,6 +27,7 @@
         buttons             = true,                       -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
         file_assets         = {},                         -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
         show_time           = true,                       -- Show the timer
+        global_timer        = false,
 
         -- Rich Presence text options
         editing_text        = "Editing %s",               -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)

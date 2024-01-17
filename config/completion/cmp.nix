@@ -127,41 +127,58 @@
     };
   };
   extraConfigLua = ''
-     luasnip = require("luasnip")
-     kind_icons = {
-       Text = "󰊄",
-       Method = "",
-       Function = "󰡱",
-       Constructor = "",
-       Field = "",
-       Variable = "󱀍",
-       Class = "",
-       Interface = "",
-       Module = "󰕳",
-       Property = "",
-       Unit = "",
-       Value = "",
-       Enum = "",
-       Keyword = "",
-       Snippet = "",
-       Color = "",
-       File = "",
-       Reference = "",
-       Folder = "",
-       EnumMember = "",
-       Constant = "",
-       Struct = "",
-       Event = "",
-       Operator = "",
-       TypeParameter = "",
-     }-- find more here: https://www.nerdfonts.com/cheat-sheet
+        luasnip = require("luasnip")
+        kind_icons = {
+          Text = "󰊄",
+          Method = "",
+          Function = "󰡱",
+          Constructor = "",
+          Field = "",
+          Variable = "󱀍",
+          Class = "",
+          Interface = "",
+          Module = "󰕳",
+          Property = "",
+          Unit = "",
+          Value = "",
+          Enum = "",
+          Keyword = "",
+          Snippet = "",
+          Color = "",
+          File = "",
+          Reference = "",
+          Folder = "",
+          EnumMember = "",
+          Constant = "",
+          Struct = "",
+          Event = "",
+          Operator = "",
+          TypeParameter = "",
+        } 
 
-      local cmp = require'cmp'
-      cmp.setup.cmdline(':', {
-        sources = cmp.config.sources({
-        { name = 'path' }
-      }, {
-        { name = 'cmdline' }
-      })
-    })  '';
+         local cmp = require'cmp'
+    -- Set configuration for specific filetype.
+     cmp.setup.filetype('gitcommit', {
+       sources = cmp.config.sources({
+         { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+       }, {
+         { name = 'buffer' },
+       })
+     })
+
+     -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+     cmp.setup.cmdline('/', {
+       sources = {
+         { name = 'buffer' }
+       }
+     })
+
+     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+     cmp.setup.cmdline(':', {
+       sources = cmp.config.sources({
+         { name = 'path' }
+       }, {
+         { name = 'cmdline' }
+       })
+     })  '';
 }
