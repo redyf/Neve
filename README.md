@@ -16,6 +16,7 @@
         <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=ca9ee6&colorA=313244&colorB=cba6f7"/>
     </a>
     <br>
+            <img href="https://builtwithnix.org" src="https://builtwithnix.org/badge.svg"/>
     </div>
    </h1>
    <br>
@@ -24,6 +25,8 @@
 <h3 align="center">
 
 ![Neve](https://cdn.discordapp.com/attachments/933711967217123411/1197763583354884096/image.png?ex=65bc7343&is=65a9fe43&hm=5e59b985f886cfbf4ce10fab916ef2d830ad4dd24204bec9927b3048ac739ce6&)
+![Neve2](https://cdn.discordapp.com/attachments/933711967217123411/1197766076960882719/image.png?ex=65bc7596&is=65aa0096&hm=bcde74ae7336893a19ec8c7271cf6b1715a78d2b25d8e235eecb30323b1950d9&)
+![Neve3](https://cdn.discordapp.com/attachments/933711967217123411/1197766500140982342/image.png?ex=65bc75fb&is=65aa00fb&hm=b80140f77eb2499054b94bc72f6dfe2990bac3a2f1c8287d6e489a99e3e86b2a&)
 
 </h3>
 <hr>
