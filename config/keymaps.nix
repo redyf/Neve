@@ -53,7 +53,7 @@
     }
 
     {
-      mode = "n";
+      mode = [ "n" "v" ];
       key = "<leader>c";
       action = "+code";
     }
