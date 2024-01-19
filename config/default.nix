@@ -44,12 +44,12 @@
 
     ./telescope/telescope.nix
 
+    ./ui/alpha.nix
     ./ui/dressing-nvim.nix
     ./ui/noice.nix
     ./ui/nvim-notify.nix
     ./ui/nui.nix
 
-    ./utils/alpha.nix
     ./utils/better-escape.nix
     ./utils/discordrpc.nix
     ./utils/flash.nix
