@@ -88,7 +88,7 @@ Contributions are welcome! Feel free to [open an issue](https://github.com/redyf
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). See the LICENSE file for more details.
+This project is licensed under the [MIT License](LICENCE). See the LICENSE file for more details.
 
 ## Support
 
