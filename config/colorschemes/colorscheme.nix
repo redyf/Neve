@@ -27,6 +27,10 @@
         gitsigns = true;
         harpoon = true;
         neotree = true;
+        mini.enabled = true;
+        indent_blankline.enabled = true;
+        native_lsp.enabled = true;
+        telescope.enabled = true;
       };
     };
   };
