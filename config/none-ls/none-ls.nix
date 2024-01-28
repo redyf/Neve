@@ -27,7 +27,7 @@
         nixpkgs_fmt = {
           enable = true;
         };
-        prettier_d_slim = {
+        prettier = {
           enable = true;
           withArgs = ''
             {

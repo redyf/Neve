@@ -54,6 +54,7 @@
     ./utils/better-escape.nix
     ./utils/discordrpc.nix
     ./utils/flash.nix
+    ./utils/hardtime.nix
     ./utils/harpoon.nix
     ./utils/markdown-preview.nix
     ./utils/mini.nix
