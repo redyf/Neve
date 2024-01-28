@@ -67,6 +67,7 @@
     ./utils/todo-comments.nix
     ./utils/toggleterm.nix
     ./utils/undotree.nix
+    ./utils/vim-be-good.nix
     ./utils/wakatime.nix
     ./utils/whichkey.nix
   ];
