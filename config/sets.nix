@@ -5,9 +5,12 @@
 }: {
   config = {
     options = {
+      cmdheight = 2; # more space in the neovim command line for displaying messages
+      completeopt = [ "menuone" "noselect" "noinsert" ]; # mostly just for cmp
+      showmode = false; # we don't need to see things like INSERT anymore
       # Block cursor
       guicursor = "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor";
-      cursorline = false; # Highlight the line where the cursor is located
+      cursorline = true; # Highlight the line where the cursor is located
 
       # Enable relative line numbers
       number = true;
@@ -17,6 +20,7 @@
       tabstop = 2; # insert 4 spaces for a tab
       softtabstop = 2;
       shiftwidth = 2; # insert 4 spaces for each indentation
+      showtabline = 2;
       expandtab = true;
 
       smartindent = true;
@@ -28,9 +32,13 @@
       backup = false;
       undofile = true;
 
-      # Incremental search
-      hlsearch = false;
+      # Search
+      hlsearch = true;
       incsearch = true;
+      ignorecase = true;
+      smartcase = true; # Don't ignore case with capitals
+      grepprg = "rg --vimgrep";
+      grepformat = "%f:%l:%c:%m";
 
       # Better colors
       termguicolors = true;
@@ -44,7 +52,7 @@
       encoding = "utf-8";
       fileencoding = "utf-8";
       # Enable chars list
-      list = true;
+      list = true; # Show invisible characters (tabs, eol, ...)
       listchars = "eol:↲,tab:|->,lead:·,space: ,trail:•,extends:→,precedes:←,nbsp:␣";
     };
     extraConfigLua = ''

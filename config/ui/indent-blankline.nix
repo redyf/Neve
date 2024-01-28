@@ -3,7 +3,7 @@
     indent-blankline = {
       enable = true;
       indent = {
-        char = "▎"; # "│" or "▎"
+        char = "│"; # "│" or "▎"
       };
       scope = {
         enabled = true;
