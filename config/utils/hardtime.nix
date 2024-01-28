@@ -1,7 +1,7 @@
 {
   plugins.hardtime = {
     enable = true;
-    enabled = true;
+    enabled = false;
     disableMouse = true;
     disabledFiletypes = [ "neo-tree" "qf" "netrw" "NvimTree" ];
     hint = true;

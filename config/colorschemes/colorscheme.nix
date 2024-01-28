@@ -3,7 +3,7 @@
     rose-pine = {
       enable = false;
       style = "main"; #  "main", "moon", "dawn" or raw lua code
-      disableItalics = true;
+      disableItalics = false;
       transparentFloat = true;
       transparentBackground = true;
     };
@@ -19,8 +19,18 @@
       disableUnderline = false;
       transparentBackground = true;
       integrations = {
+        noice = true;
+        notify = true;
+        treesitter = true;
+        which_key = true;
+        cmp = true;
+        gitsigns = true;
+        harpoon = true;
+        neotree = true;
         mini.enabled = true;
+        indent_blankline.enabled = true;
         native_lsp.enabled = true;
+        telescope.enabled = true;
       };
     };
   };
