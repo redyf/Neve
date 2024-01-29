@@ -4,7 +4,7 @@
     cmd = [
       "/nix/store/20h2hjjm94gbskqhbwikbgxbblv1xpf2-jdt-language-server-1.31.0/bin/jdtls"
     ];
-    # data = "~/.cache/jdtls/workspace";
+    data = "~/.cache/jdtls/workspace";
     # configuration = "/path/to/configuration";
     # rootDir = "require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'})";
 
