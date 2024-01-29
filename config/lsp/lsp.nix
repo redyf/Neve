@@ -89,4 +89,7 @@
       };
     };
   };
+  extraConfigLua = ''
+    require('lspconfig').jdtls.setup({})
+  '';
 }

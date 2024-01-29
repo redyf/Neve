@@ -10,6 +10,7 @@
       typescript = [ "eslint_d" ];
       typescriptreact = [ "eslint_d" ];
       json = [ "jsonlint" ];
+      java = [ "checkstyle" ];
     };
   };
 }

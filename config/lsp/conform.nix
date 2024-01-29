@@ -7,15 +7,16 @@
     };
     notifyOnError = true;
     formattersByFt = {
-      lua = [ "stylua" ];
-      python = [ "black" ];
-      nix = [ "nixpkgs_fmt" ];
       html = [ [ "prettierd" "prettier" ] ];
       css = [ [ "prettierd" "prettier" ] ];
       javascript = [ [ "prettierd" "prettier" ] ];
       javascriptreact = [ [ "prettierd" "prettier" ] ];
       typescript = [ [ "prettierd" "prettier" ] ];
       typescriptreact = [ [ "prettierd" "prettier" ] ];
+      java = [ "google-java-format" ];
+      python = [ "black" ];
+      lua = [ "stylua" ];
+      nix = [ "nixpkgs_fmt" ];
       markdown = [ [ "prettierd" "prettier" ] ];
       rust = [ "rustfmt" ];
     };
