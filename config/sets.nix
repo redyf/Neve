@@ -4,6 +4,7 @@
 , ...
 }: {
   config = {
+    # TODO: Organize the options
     options = {
       cmdheight = 2; # more space in the neovim command line for displaying messages
       completeopt = [ "menuone" "noselect" "noinsert" ]; # mostly just for cmp

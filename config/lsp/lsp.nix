@@ -67,10 +67,10 @@
             action = "code_action";
             desc = "Code Action";
           };
-          "<C-k>" = {
-            action = "signature_help";
-            desc = "Signature Help";
-          };
+          # "<C-k>" = {
+          #   action = "signature_help";
+          #   desc = "Signature Help";
+          # };
         };
         diagnostic = {
           "<leader>cd" = {
