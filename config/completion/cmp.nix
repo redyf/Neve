@@ -125,6 +125,9 @@
     cmp-path = {
       enable = true;
     };
+    cmp-cmdline = {
+      enable = true;
+    };
   };
   extraConfigLua = ''
           luasnip = require("luasnip")
@@ -181,11 +184,11 @@
          }, {
            { name = 'cmdline' }
          }),
-         formatting = {
-          format = function(_, vim_item)
-            vim_item.kind = cmdIcons[vim_item.kind] or "FOO"
-          return vim_item
-         end
-    }
+    --      formatting = {
+    --       format = function(_, vim_item)
+    --         vim_item.kind = cmdIcons[vim_item.kind] or "FOO"
+    --       return vim_item
+    --      end
+    -- }
        })  '';
 }
