@@ -39,11 +39,11 @@
       };
       "<leader>gc" = {
         action = "git_commits, {}";
-        desc = "commits";
+        desc = "Commits";
       };
       "<leader>gs" = {
         action = "git_status, {}";
-        desc = "status";
+        desc = "Status";
       };
       "<leader>sa" = {
         action = "autocommands, {}";
