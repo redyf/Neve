@@ -89,7 +89,9 @@
       };
     };
   };
-  # extraConfigLua = ''
-  #   require('lspconfig').jdtls.setup({})
-  # '';
+  extraConfigLua = ''
+      vim.diagnostic.config {     
+        float = { border = "rounded" }, 
+    }
+  '';
 }
