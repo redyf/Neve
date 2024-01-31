@@ -2,6 +2,21 @@
   plugins.telescope = {
     enable = true;
     extensions = {
+      undo = {
+        enable = true;
+        mappings = {
+          i = {
+            "<cr>" = "yank_additions";
+            "<s-cr>" = "yank_deletions";
+            "<c-cr>" = "restore";
+          };
+          n = {
+            "y" = "yank_additions";
+            "Y" = "yank_deletions";
+            "u" = "restore";
+          };
+        };
+      };
       fzf-native.enable = true;
     };
     keymaps = {
