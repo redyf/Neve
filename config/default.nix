@@ -34,6 +34,7 @@
     ./languages/treesitter/ts-context-commentstring.nix
 
     ./lsp/conform.nix
+    ./lsp/fidget.nix
     ./lsp/lsp.nix
     ./lsp/trouble.nix
 
