@@ -3,31 +3,38 @@
     enable = true;
   };
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>to";
-      action = "<cmd>:Copilot panel<cr>";
-      options = {
-        silent = true;
-        desc = "Open Copilot";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>tc";
-      action = "<cmd>:lua require('copilot.suggestion').toggle_auto_trigger()<cr>";
-      options = {
-        silent = true;
-        desc = "Toggle Copilot";
-      };
-    }
-  ];
+  # keymaps = [
+  #   {
+  #     mode = "n";
+  #     key = "<leader>t";
+  #     action = "+copilot";
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     key = "<leader>to";
+  #     action = "<cmd>:Copilot panel<cr>";
+  #     options = {
+  #       silent = true;
+  #       desc = "Open Copilot";
+  #     };
+  #   }
+  #
+  #   {
+  #     mode = "n";
+  #     key = "<leader>tc";
+  #     action = "<cmd>:lua require('copilot.suggestion').toggle_auto_trigger()<cr>";
+  #     options = {
+  #       silent = true;
+  #       desc = "Toggle Copilot";
+  #     };
+  #   }
+  # ];
 
   extraConfigLua = ''
       require('copilot').setup({
       panel = {
-        enabled = true,
+        enabled = false,
         auto_refresh = true,
         keymap = {
           jump_prev = "[[",
@@ -42,7 +49,7 @@
         },
       },
       suggestion = {
-        enabled = true,
+        enabled = false,
         auto_trigger = true,
         debounce = 75,
         keymap = {

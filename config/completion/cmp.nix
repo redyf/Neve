@@ -3,6 +3,9 @@
     nvim-cmp = {
       enable = true;
       autoEnableSources = true;
+      experimental = {
+        ghost_text = true;
+      };
       performance = {
         debounce = 60;
         fetchingTimeout = 200;
@@ -13,37 +16,25 @@
       };
       formatting = {
         fields = [ "kind" "abbr" "menu" ];
-        format = ''
-          function(entry, vim_item)
-              vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-              vim_item.menu = ({
-                  path = "[Path]",
-                  nvim_lua = "[NVIM_LUA]",
-                  nvim_lsp = "[LSP]",
-                  luasnip = "[Snippet]",
-                  buffer = "[Buffer]",
-              })[entry.source.name]
-              return vim_item
-          end
-        '';
       };
       sources = [
         {
-          name = "nvim_lsp";
-          keywordLength = 1;
+          name = "nvim_lsp"; # lsp
         }
         {
-          name = "luasnip";
-          keywordLength = 1;
-        }
-        {
-          name = "buffer";
-          # Words from other open buffers can also be suggested.
+          name = "buffer"; # text within current buffer
           option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
           keywordLength = 3;
         }
         {
-          name = "path";
+          name = "copilot"; # copilot suggestions
+        }
+        {
+          name = "path"; # file system paths
+          keywordLength = 3;
+        }
+        {
+          name = "luasnip"; # snippets
           keywordLength = 3;
         }
       ];
@@ -87,10 +78,10 @@
             end
           '';
         };
-        "<C-n>" = {
+        "<C-j>" = {
           action = "cmp.mapping.select_next_item()";
         };
-        "<C-p>" = {
+        "<C-k>" = {
           action = "cmp.mapping.select_prev_item()";
         };
         "<C-e>" = {
@@ -113,21 +104,12 @@
         };
       };
     };
-    cmp-buffer = {
-      enable = true;
-    };
-    cmp_luasnip = {
-      enable = true;
-    };
-    cmp-nvim-lsp = {
-      enable = true;
-    };
-    cmp-path = {
-      enable = true;
-    };
-    cmp-cmdline = {
-      enable = true;
-    };
+    cmp-nvim-lsp = { enable = true; }; # lsp
+    cmp-buffer = { enable = true; };
+    copilot-cmp = { enable = true; }; # copilot suggestions
+    cmp-path = { enable = true; }; # file system paths
+    cmp_luasnip = { enable = true; }; # snippets
+    cmp-cmdline = { enable = false; }; # autocomplete for cmdline
   };
   extraConfigLua = ''
           luasnip = require("luasnip")
