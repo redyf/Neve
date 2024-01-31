@@ -75,7 +75,7 @@
       };
       "<leader>sk" = {
         action = "keymaps, {}";
-        desc = "Key maps";
+        desc = "Keymaps";
       };
       "<leader>sM" = {
         action = "man_pages, {}";

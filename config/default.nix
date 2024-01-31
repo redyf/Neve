@@ -3,8 +3,6 @@
 , pkgs
 , ...
 }: {
-  # TODO: Implement code actions + more keybinds
-
   # Import all your configuration modules here
   imports = [
     ./sets.nix
@@ -16,6 +14,7 @@
 
     ./completion/cmp.nix
     ./completion/copilot.nix
+    ./completion/lspkind.nix
 
     ./dap/dap.nix
 
@@ -25,15 +24,17 @@
     ./git/lazygit.nix
     ./git/neogit.nix
 
+    ./languages/nvim-jdtls.nix
     ./languages/nvim-lint.nix
     ./languages/typescript-tools-nvim.nix
     ./languages/treesitter/treesitter.nix
+    ./languages/treesitter/treesitter-context.nix
     ./languages/treesitter/treesitter-textobjects.nix
     ./languages/treesitter/ts-autotag.nix
     ./languages/treesitter/ts-context-commentstring.nix
 
-    ./lsp/lsp.nix
     ./lsp/conform.nix
+    ./lsp/lsp.nix
     ./lsp/trouble.nix
 
     ./none-ls/none-ls.nix
@@ -67,7 +68,9 @@
     ./utils/todo-comments.nix
     ./utils/toggleterm.nix
     ./utils/undotree.nix
+    ./utils/vim-be-good.nix
     ./utils/wakatime.nix
     ./utils/whichkey.nix
+    ./utils/wilder.nix
   ];
 }

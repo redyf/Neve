@@ -1,7 +1,11 @@
+let
+  icon = "";
+in
 {
   plugins.lualine = {
     enable = true;
     alwaysDivideMiddle = true;
+    globalstatus = true;
     ignoreFocus = [ "neo-tree" ];
     extensions = [ "fzf" ];
     theme = "auto";
@@ -15,7 +19,11 @@
     };
     sections = {
       lualine_a = [ "mode" ];
-      lualine_b = [ "branch" "diff" "diagnostics" ];
+      lualine_b = [
+        { name = "branch"; icon = ""; }
+        "diff"
+        "diagnostics"
+      ];
       lualine_c = [ "filename" ];
       lualine_x = [ "filetype" ];
       lualine_y = [ "progress" ];
