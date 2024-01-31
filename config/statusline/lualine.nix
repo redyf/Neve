@@ -1,6 +1,3 @@
-let
-  icon = "";
-in
 {
   plugins.lualine = {
     enable = true;
