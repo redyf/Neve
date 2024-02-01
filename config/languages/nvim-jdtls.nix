@@ -1,10 +1,16 @@
-{ pkgs, ... }: {
+{
   plugins.nvim-jdtls = {
     enable = true;
     cmd = [
       "/nix/store/20h2hjjm94gbskqhbwikbgxbblv1xpf2-jdt-language-server-1.31.0/bin/jdtls"
     ];
     data = "~/.cache/jdtls/workspace";
+    initOptions = {
+      bundles = [
+        "/nix/store/b9ib40q36wxjl4xs5lng263lflz1fsi7-vscode-extension-vscjava-vscode-java-debug-0.49.2023032407/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar"
+        "/nix/store/b9ib40q36wxjl4xs5lng263lflz1fsi7-vscode-extension-vscjava-vscode-java-debug-0.49.2023032407/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar"
+      ];
+    };
     # configuration = "/path/to/configuration";
     # rootDir = "require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'})";
 
@@ -12,9 +18,6 @@
     #   java = { };
     # };
     #
-    # initOptions = {
-    #   bundles = { };
-    # };
   };
   # extraConfigLua = ''
   #   local jdtls = require("jdtls")
