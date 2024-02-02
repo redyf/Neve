@@ -2,6 +2,12 @@
   plugins.telescope = {
     enable = true;
     extensions = {
+      fzf-native = {
+        enable = true;
+      };
+      project-nvim = {
+        enable = true;
+      };
       undo = {
         enable = true;
         mappings = {
@@ -17,14 +23,9 @@
           };
         };
       };
-      fzf-native.enable = true;
     };
     keymaps = {
       "<leader><space>" = {
-        action = "find_files, {}";
-        desc = "Find project files";
-      };
-      "<leader>ff" = {
         action = "find_files, {}";
         desc = "Find project files";
       };
@@ -36,6 +37,14 @@
         action = "command_history, {}";
         desc = "Command History";
       };
+      "<leader>b" = {
+        action = "buffers, {}";
+        desc = "+buffer";
+      };
+      "<leader>ff" = {
+        action = "find_files, {}";
+        desc = "Find project files";
+      };
       "<leader>fr" = {
         action = "oldfiles, {}";
         desc = "Recent";
@@ -43,10 +52,6 @@
       "<leader>fb" = {
         action = "buffers, {}";
         desc = "Buffers";
-      };
-      "<leader>b" = {
-        action = "buffers, {}";
-        desc = "+buffer";
       };
       "<C-p>" = {
         action = "git_files, {}";
@@ -115,6 +120,16 @@
     };
   };
   keymaps = [
+
+    {
+      mode = "n";
+      key = "<leader>fp";
+      action = "<cmd>Telescope projects<CR>";
+      options = {
+        desc = "Projects";
+      };
+    }
+
     {
       mode = "n";
       key = "<leader>sd";
