@@ -10,7 +10,7 @@ in
     ];
     # configuration = "/path/to/configuration";
     data = "~/.cache/jdtls/workspace";
-    # rootDir = "require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'})";
+    rootDir = "require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'})";
     settings = {
       java = {
         signatureHelp = true;
