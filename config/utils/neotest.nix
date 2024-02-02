@@ -40,6 +40,8 @@
         ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
         },
       },
+      output = { enabled = true, open_on_run = true },
+      summary = { enabled = true, },
     })
   '';
   keymaps = [
