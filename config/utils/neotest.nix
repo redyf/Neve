@@ -10,34 +10,35 @@
         sha256 = "0w5fvqic3qapi9ggfb81nqa9fl6jv831s91r0wgn4d7c35h0340r";
       };
     })
+    (pkgs.vimUtils.buildVimPlugin {
+      pname = "neotest-vim-test";
+      version = "2023-04-17";
+      src = pkgs.fetchFromGitHub {
+        owner = "nvim-neotest";
+        repo = "neotest-vim-test";
+        rev = "75c4228882ae4883b11bfce9b8383e637eb44192";
+        sha256 = "12ix1lzmqlk3iyngaafby9c02fcl9d5iva965miwxfljvmibjnbw";
+      };
+    })
     neotest
     FixCursorHold-nvim
-    neotest-python
     neotest-plenary
+    vim-test
+    neotest-python
+    neotest-vitest
   ];
-  # extraConfigLua = ''
-  #   require("neotest").setup({
-  #     adapters = {
-  #       require("neotest-python")({
-  #         dap = {justMyCode = false},
-  #         }),
-  #         require("neotest-plenary"),
-  #     require("neotest-vim-test")({
-  #       ignore_file_types = { "python", "vim", "lua" },
-  #     }),
-  #     }
-  #     })
-  # '';
   extraConfigLua = ''
      require("neotest").setup({
       adapters = {
         require("neotest-java")({
           ignore_wrapper = false,
         }),
-        -- require("neotest-python")({
-        -- dap = { justMyCode = false },
-        -- }),
-        require "neotest-python",
+        require("neotest-python")({
+        dap = { justMyCode = false },
+        }),
+        require "neotest-vim-test" {
+        ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
+        },
       },
     })
   '';
@@ -72,9 +73,9 @@
     {
       mode = "n";
       key = "<leader>td";
-      action = "<cmd>lua require('neotest').run.run({strategy = dap'})<CR>";
+      action = "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>";
       options = {
-        desc = "Run Nearest";
+        desc = "Run Nearest with debugger";
         silent = true;
       };
     }
