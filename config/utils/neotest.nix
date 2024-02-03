@@ -49,7 +49,7 @@
         dap = { justMyCode = false },
         }),
         require "neotest-vim-test" {
-        ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
+        ignore_file_types = { "python", "java", "vim", "lua", "javascript", "typescript" },
         },
       },
       output = { enabled = true, open_on_run = true },
