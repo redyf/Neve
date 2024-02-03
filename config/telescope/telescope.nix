@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
-  extraPlugins = with pkgs.vimPlugins; [
-    telescope-manix
-  ];
-
+{ inputs
+, pkgs
+, ...
+}: {
   plugins.telescope = {
     enable = true;
     extensions = {
@@ -153,16 +152,6 @@
       };
     }
 
-    {
-      mode = "n";
-      key = "<leader>fm";
-      action = "<cmd>Telescope manix<cr>";
-      options = {
-        desc = "Manix";
-        silent = true;
-      };
-    }
-
     # {
     #   mode = "n";
     #   key = "<leader>,";
@@ -173,13 +162,13 @@
     # }
   ];
   extraConfigLua = ''
-    local telescope = require('telescope')
-    telescope.setup{
-        pickers = {
-          colorscheme = {
-            enable_preview = true
+      local telescope = require('telescope')
+      telescope.setup{
+          pickers = {
+            colorscheme = {
+              enable_preview = true
+            }
           }
-        }
     }
   '';
 }
