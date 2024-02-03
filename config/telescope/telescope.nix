@@ -181,6 +181,5 @@
           }
         }
     }
-    telescope.load_extension('manix')
   '';
 }
