@@ -1,6 +1,12 @@
 {
   plugins.noice = {
     enable = true;
+    notify = {
+      enabled = true;
+    };
+    messages = {
+      enabled = true;
+    };
     lsp = {
       message = {
         enabled = true;

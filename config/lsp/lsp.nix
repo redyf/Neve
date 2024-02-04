@@ -7,7 +7,18 @@
       enable = true;
       servers = {
         clangd = { enable = true; };
-        lua-ls = { enable = true; };
+        lua-ls = {
+          enable = true;
+          extraOptions = {
+            settings = {
+              Lua = {
+                completion = {
+                  callSnippet = "Replace";
+                };
+              };
+            };
+          };
+        };
         nixd = { enable = true; };
         tsserver = {
           enable = false;

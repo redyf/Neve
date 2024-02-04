@@ -3,6 +3,49 @@
   globals.mapleader = " ";
 
   keymaps = [
+    # Disable arrow keys
+    {
+      mode = [ "n" "i" ];
+      key = "<Up>";
+      action = "<Nop>";
+      options =
+        {
+          silent = true;
+          noremap = true;
+          desc = "Disable Up arrow key";
+        };
+    }
+    {
+      mode = [ "n" "i" ];
+      key = "<Down>";
+      action = "<Nop>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Disable Down arrow key";
+      };
+    }
+    {
+      mode = [ "n" "i" ];
+      key = "<Right>";
+      action = "<Nop>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Disable Right arrow key";
+      };
+    }
+    {
+      mode = [ "n" "i" ];
+      key = "<Left>";
+      action = "<Nop>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Disable Left arrow key";
+      };
+    }
+
     # General maps
     {
       mode = "n";
@@ -272,8 +315,8 @@
       key = "J";
       action = ":m '>+1<CR>gv=gv";
       options = {
-        desc = "Use move command when line is highlighted
-";
+        silent = true;
+        desc = "Move up when line is highlighted";
       };
     }
 
@@ -282,8 +325,8 @@
       key = "K";
       action = ":m '>-2<CR>gv=gv";
       options = {
-        desc = "Use move command when line is highlighted
-";
+        silent = true;
+        desc = "Move down when line is highlighted";
       };
     }
 
@@ -292,6 +335,7 @@
       key = "J";
       action = "mzJ`z";
       options = {
+        silent = true;
         desc = "Allow cursor to stay in the same place after appending to current line ";
       };
     }
@@ -301,6 +345,7 @@
       key = "<C-d>";
       action = "<C-d>zz";
       options = {
+        silent = true;
         desc = "Allow C-d and C-u to keep the cursor in the middle";
       };
     }
@@ -319,8 +364,7 @@
       key = "n";
       action = "nzzzv";
       options = {
-        desc = "Allow search terms to stay in the middle
-";
+        desc = "Allow search terms to stay in the middle";
       };
     }
 
@@ -329,8 +373,7 @@
       key = "N";
       action = "Nzzzv";
       options = {
-        desc = "Allow search terms to stay in the middle
-";
+        desc = "Allow search terms to stay in the middle";
       };
     }
 
