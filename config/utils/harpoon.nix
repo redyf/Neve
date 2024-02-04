@@ -1,6 +1,6 @@
 {
   plugins.harpoon = {
-    enable = true;
+    enable = false;
     enableTelescope = true;
     keymapsSilent = true;
     keymaps = {
