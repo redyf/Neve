@@ -4,6 +4,7 @@
   inputs = {
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
@@ -15,6 +16,9 @@
     } @ inputs:
     let
       config = import ./config; # import the module directly
+      overlays = [
+        inputs.neovim-nightly-overlay.overlay
+      ];
     in
     flake-utils.lib.eachDefaultSystem (system:
     let
@@ -43,6 +47,8 @@
         # Lets you run `nix run .` to start nixvim
         default = nvim;
       };
+
+      nixpkgs.overlays = overlays;
 
       formatter = pkgs.nixpkgs-fmt;
     });
