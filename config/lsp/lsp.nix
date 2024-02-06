@@ -15,6 +15,9 @@
                 completion = {
                   callSnippet = "Replace";
                 };
+                telemetry = {
+                  enabled = false;
+                };
               };
             };
           };
