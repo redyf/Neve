@@ -2,9 +2,6 @@
   colorschemes = {
     onedark = {
       enable = true;
-      disableBold = false;
-      disableItalic = false;
-      disableUnderline = false;
       transparentBackground = true;
       integrations = {
         cmp = true;
