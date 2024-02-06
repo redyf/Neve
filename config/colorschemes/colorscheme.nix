@@ -1,19 +1,7 @@
 {
   colorschemes = {
-    rose-pine = {
-      enable = false;
-      style = "main"; #  "main", "moon", "dawn" or raw lua code
-      disableItalics = false;
-      transparentFloat = true;
-      transparentBackground = true;
-    };
-    catppuccin = {
+    onedark = {
       enable = true;
-      background = {
-        light = "macchiato";
-        dark = "mocha";
-      };
-      flavour = "macchiato"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
       disableBold = false;
       disableItalic = false;
       disableUnderline = false;
