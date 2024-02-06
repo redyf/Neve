@@ -64,6 +64,7 @@
     ./utils/neodev.nix
     ./utils/neotest.nix
     ./utils/nvim-autopairs.nix
+    ./utils/ultimate-autopairs.nix
     ./utils/nvim-colorizer.nix
     ./utils/nvim-surround.nix
     ./utils/persistence.nix
