@@ -11,6 +11,13 @@
       project-nvim = {
         enable = true;
       };
+      ui-select = {
+        settings = {
+          specific_opts = {
+            codeactions = true;
+          };
+        };
+      };
       undo = {
         enable = true;
         mappings = {
