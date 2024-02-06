@@ -13,7 +13,7 @@
     ./colorschemes/colorscheme.nix
 
     ./completion/cmp.nix
-    ./completion/copilot.nix
+    #./completion/copilot.nix
     ./completion/lspkind.nix
 
     ./dap/dap.nix
@@ -55,7 +55,7 @@
     ./ui/nui.nix
 
     ./utils/better-escape.nix
-    ./utils/discordrpc.nix
+    #./utils/discordrpc.nix
     ./utils/flash.nix
     ./utils/hardtime.nix
     ./utils/harpoon.nix
