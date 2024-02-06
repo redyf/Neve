@@ -16,6 +16,16 @@
       };
       formatting = {
         fields = [ "kind" "abbr" "menu" ];
+        expandableIndicator = true;
+      };
+      window = {
+        completion = {
+          border = "rounded";
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+        };
+        documentation = {
+          border = "rounded";
+        };
       };
       sources = [
         {
@@ -39,15 +49,6 @@
         }
       ];
 
-      window = {
-        completion = {
-          border = "rounded";
-          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
-        };
-        documentation = {
-          border = "rounded";
-        };
-      };
 
       mapping = {
         "<Tab>" = {
@@ -166,11 +167,5 @@
               }, {
               { name = 'cmdline' }
               }),
-          --      formatting = {
-          --       format = function(_, vim_item)
-          --         vim_item.kind = cmdIcons[vim_item.kind] or "FOO"
-          --       return vim_item
-          --      end
-          -- }
           })  '';
 }
