@@ -59,11 +59,13 @@
     ./utils/flash.nix
     ./utils/hardtime.nix
     ./utils/harpoon.nix
+    ./utils/illuminate.nix
     ./utils/markdown-preview.nix
     ./utils/mini.nix
     ./utils/neodev.nix
     ./utils/neotest.nix
     ./utils/nvim-autopairs.nix
+    ./utils/ultimate-autopairs.nix
     ./utils/nvim-colorizer.nix
     ./utils/nvim-surround.nix
     ./utils/persistence.nix

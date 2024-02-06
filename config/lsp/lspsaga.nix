@@ -22,14 +22,16 @@
     };
     codeAction = {
       extendGitSigns = false;
-      showServerName = false;
+      showServerName = true;
+      onlyInCursor = true;
+      numShortcut = true;
       keys = {
         exec = "<CR>";
         quit = [ "<Esc>" "q" ];
       };
     };
     lightbulb = {
-      enable = true;
+      enable = false;
       sign = false;
       virtualText = true;
     };

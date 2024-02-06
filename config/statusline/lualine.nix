@@ -11,13 +11,16 @@
       right = "|";
     };
     sectionSeparators = {
-      left = ""; # 
-      right = ""; # 
+      left = "█"; # 
+      right = "█"; # 
     };
     sections = {
       lualine_a = [ "mode" ];
       lualine_b = [
-        { name = "branch"; icon = ""; }
+        {
+          name = "branch";
+          icon = "";
+        }
         "diff"
         "diagnostics"
       ];
