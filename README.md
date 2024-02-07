@@ -19,19 +19,27 @@
             <img href="https://builtwithnix.org" src="https://builtwithnix.org/badge.svg"/>
     </div>
    </h1>
-   <br>
 
 <h1 align="center">❄️ Neve ❄️</h1>
 <h3 align="center">
 
-![Neve](https://cdn.discordapp.com/attachments/933711967217123411/1197763583354884096/image.png?ex=65bc7343&is=65a9fe43&hm=5e59b985f886cfbf4ce10fab916ef2d830ad4dd24204bec9927b3048ac739ce6&)
-![Neve2](https://cdn.discordapp.com/attachments/933711967217123411/1197766076960882719/image.png?ex=65bc7596&is=65aa0096&hm=bcde74ae7336893a19ec8c7271cf6b1715a78d2b25d8e235eecb30323b1950d9&)
-![Neve3](https://cdn.discordapp.com/attachments/933711967217123411/1197766500140982342/image.png?ex=65bc75fb&is=65aa00fb&hm=b80140f77eb2499054b94bc72f6dfe2990bac3a2f1c8287d6e489a99e3e86b2a&)
+<details>
+    <summary>Showcase</summary>
+
+![Neve](https://cdn.discordapp.com/attachments/933711967217123411/1204637351066992740/image.png?ex=65d574f5&is=65c2fff5&hm=d9e45dd67ccc5b0f2a62e6215464f5849079ad6139d1187acdbb2ad3ab639916&)
+![Neve2](https://cdn.discordapp.com/attachments/933711967217123411/1204637623679717426/image.png?ex=65d57536&is=65c30036&hm=9a8cdf58b7f8b5bf660829e7a08e0d3d090c34d06453d3a9f17123887af49d2f&)
+![Neve3](https://cdn.discordapp.com/attachments/933711967217123411/1204637960369213450/image.png?ex=65d57586&is=65c30086&hm=96ab84f41879b0660964ff92d8d099d83c0f319291bc391d55d011bf141510f1&)
+![Neve4](https://cdn.discordapp.com/attachments/933711967217123411/1204638486066368512/image.png?ex=65d57604&is=65c30104&hm=fbbfbf43e8245e37585b4a4c8b7a4f3298845726720fbc1c77c024e52d576e87&)
+![Neve5](https://cdn.discordapp.com/attachments/933711967217123411/1204638725833883728/image.png?ex=65d5763d&is=65c3013d&hm=31898ca3921d23b907ef798296e0a0a4283b1cf3f2e357e43bb5fe91c1d51005&)
+![Neve6](https://cdn.discordapp.com/attachments/933711967217123411/1204640737065435146/image.png?ex=65d5781c&is=65c3031c&hm=8149a13584c880d483e951ec275e174c05716dea62dade6962317b3756be7c71&)
+
+</details>
 
 </h3>
-<hr>
 
-Neve is a meticulously crafted custom configuration for Nixvim, designed to revolutionize your development workflow and provide an unparalleled coding experience. This configuration is the culmination of expertise and passion, aiming to provide sane defaults.
+## What's Neve??
+
+Neve (snow in portuguese) is a meticulously crafted custom configuration for Nixvim, designed to revolutionize your development workflow and provide an unparalleled coding experience. This configuration is the culmination of expertise and passion, aiming to provide sane defaults.
 
 ## Features
 
@@ -48,6 +56,7 @@ Neve is a meticulously crafted custom configuration for Nixvim, designed to revo
 Getting started with Neve is a breeze. Simply follow the installation guide below, and you'll be up and running in no time.
 
 However if you'd like to give it a try before installing, <b>nix run github:redyf/neve</b> is available!
+
 <details>
     <summary><b>INSTALLATION GUIDE</b></summary>
     I'm assuming you already use nix flakes but in case you don't, please check this tutorial to enable them:
@@ -55,6 +64,7 @@ However if you'd like to give it a try before installing, <b>nix run github:redy
 [Flakes](https://nixos.wiki/wiki/Flakes)
 
     After enabling it, follow the steps below:
+
 ```
 1- Go to flake.nix and add Neve.url = "github:redyf/Neve" to your inputs.
 
@@ -62,8 +72,9 @@ However if you'd like to give it a try before installing, <b>nix run github:redy
 
 3- Install it by adding inputs.Neve.packages.${system}.default to your environment.systemPackages or home.packages if you're using home-manager.
 
-4- Rebuild your system and you should be done :)
+4- Rebuild your system and you should be done :
 ```
+
 </details>
 
 ## Quick Start
