@@ -2,10 +2,17 @@
   plugins.oil = {
     enable = true;
     useDefaultKeymaps = true;
+    deleteToTrash = true;
+    viewOptions = {
+      showHidden = true;
+    };
     float = {
+      padding = 2;
+      maxWidth = 0;
+      maxHeight = 0;
       border = "rounded"; # 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
       winOptions = {
-        winblend = 10;
+        winblend = 0;
       };
     };
     preview = {
@@ -27,6 +34,7 @@
       "gs" = "actions.change_sort";
       "gx" = "actions.open_external";
       "g." = "actions.toggle_hidden";
+      "q" = "actions.close";
     };
   };
   keymaps =
@@ -34,7 +42,7 @@
       {
         mode = "n";
         key = "<leader>e";
-        action = ":Oil<CR>";
+        action = ":Oil --float<CR>";
         options = {
           desc = "Open parent directory";
           silent = true;
