@@ -10,7 +10,9 @@
 
     ./bufferlines/bufferline.nix
 
-    ./colorschemes/colorscheme.nix
+    ./colorschemes/base16.nix
+    ./colorschemes/catppuccin.nix
+    ./colorschemes/rose-pine.nix
 
     ./completion/cmp.nix
     ./completion/copilot.nix
@@ -65,15 +67,16 @@
     ./utils/neodev.nix
     ./utils/neotest.nix
     ./utils/nvim-autopairs.nix
-    ./utils/ultimate-autopairs.nix
     ./utils/nvim-colorizer.nix
     ./utils/nvim-surround.nix
+    ./utils/oil.nix
     ./utils/persistence.nix
     ./utils/plenary.nix
     ./utils/project-nvim.nix
     ./utils/tmux-navigator.nix
     ./utils/todo-comments.nix
     ./utils/toggleterm.nix
+    ./utils/ultimate-autopairs.nix
     ./utils/undotree.nix
     ./utils/vim-be-good.nix
     ./utils/wakatime.nix
