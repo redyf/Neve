@@ -99,7 +99,7 @@
       #     action = "goto_prev";
       #     desc = "Previous Diagnostic";
       #   };
-      # };
+      #   };
       # };
     };
   };
