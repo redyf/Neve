@@ -8,8 +8,12 @@
     };
     float = {
       padding = 2;
-      maxWidth = 0;
-      maxHeight = 0;
+      maxWidth.__raw = ''
+        math.ceil(vim.o.lines * 0.8 - 4)
+      '';
+      maxHeight.__raw = ''
+        math.ceil(vim.o.columns * 0.8)
+      '';
       border = "rounded"; # 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
       winOptions = {
         winblend = 0;
@@ -41,7 +45,7 @@
     [
       {
         mode = "n";
-        key = "<leader>e";
+        key = "<leader>o";
         action = ":Oil --float<CR>";
         options = {
           desc = "Open parent directory";
