@@ -5,9 +5,7 @@
     };
     lsp = {
       enable = true;
-      capabilities = "offsetEncoding =  'utf-16'";
       servers = {
-        clangd = { enable = true; };
         lua-ls = {
           enable = true;
           extraOptions = {
