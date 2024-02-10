@@ -38,7 +38,7 @@
         };
       };
       formatting = {
-        nixpkgs_fmt = {
+        alejandra = {
           enable = true;
         };
         prettier = {
