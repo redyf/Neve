@@ -1,8 +1,4 @@
-{ inputs
-, self
-, pkgs
-, ...
-}: {
+{
   # Import all your configuration modules here
   imports = [
     ./sets.nix
@@ -10,9 +6,9 @@
 
     ./bufferlines/bufferline.nix
 
-    ./colorschemes/base16.nix
+    # ./colorschemes/base16.nix
     ./colorschemes/catppuccin.nix
-    ./colorschemes/rose-pine.nix
+    # ./colorschemes/rose-pine.nix
 
     ./completion/cmp.nix
     ./completion/copilot.nix
@@ -20,18 +16,17 @@
 
     ./dap/dap.nix
 
-    ./filetrees/neo-tree.nix
-
+    # ./filetrees/neo-tree.nix
     ./git/gitsigns.nix
     ./git/lazygit.nix
-    ./git/neogit.nix
+    # ./git/neogit.nix
 
     ./languages/nvim-jdtls.nix
     ./languages/nvim-lint.nix
     ./languages/typescript-tools-nvim.nix
     ./languages/treesitter/treesitter.nix
     ./languages/treesitter/treesitter-context.nix
-    ./languages/treesitter/treesitter-textobjects.nix
+    # ./languages/treesitter/treesitter-textobjects.nix
     ./languages/treesitter/ts-autotag.nix
     ./languages/treesitter/ts-context-commentstring.nix
 
@@ -41,7 +36,7 @@
     ./lsp/lspsaga.nix
     ./lsp/trouble.nix
 
-    ./none-ls/none-ls.nix
+    # ./none-ls/none-ls.nix
 
     ./snippets/luasnip.nix
 
@@ -58,15 +53,15 @@
 
     ./utils/better-escape.nix
     ./utils/discordrpc.nix
-    ./utils/flash.nix
+    # ./utils/flash.nix
     ./utils/hardtime.nix
     ./utils/harpoon.nix
-    ./utils/illuminate.nix
+    # ./utils/illuminate.nix
     ./utils/markdown-preview.nix
     ./utils/mini.nix
     ./utils/neodev.nix
     ./utils/neotest.nix
-    ./utils/nvim-autopairs.nix
+    # ./utils/nvim-autopairs.nix
     ./utils/nvim-colorizer.nix
     ./utils/nvim-surround.nix
     ./utils/oil.nix
