@@ -1,11 +1,6 @@
 {
   plugins.conform-nvim = {
     enable = true;
-    # As a shortcut, conform will optionally set up this format-on-save autocmd for you
-    # formatOnSave = {
-    #   lspFallback = true;
-    #   timeoutMs = 500;
-    # };
     notifyOnError = true;
     formattersByFt = {
       html = [["prettierd" "prettier"]];
