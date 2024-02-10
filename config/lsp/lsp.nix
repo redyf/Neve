@@ -1,7 +1,7 @@
 {
   plugins = {
     lsp-format = {
-      enable = true;
+      enable = false; # Enable it if you want lsp-format integration for none-ls
     };
     lsp = {
       enable = true;
@@ -22,7 +22,7 @@
             };
           };
         };
-        nixd = { enable = true; };
+        nil_ls = { enable = true; };
         tsserver = {
           enable = false;
           filetypes = [ "javascript" "javascriptreact" "typescript" "typescriptreact" ];
