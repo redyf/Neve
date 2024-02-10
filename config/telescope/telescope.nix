@@ -34,6 +34,19 @@
         };
       };
     };
+# If you'd prefer Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
+    defaults = {
+      mappings = {
+        i = {
+          "<esc>" = {
+            __raw = ''
+              function(...)
+                return require("telescope.actions").close(...)
+              end'';
+          };
+        };
+      };
+    };
     keymaps = {
       "<leader><space>" = {
         action = "find_files, {}";
@@ -169,13 +182,13 @@
     # }
   ];
   extraConfigLua = ''
-      local telescope = require('telescope')
-      telescope.setup{
-          pickers = {
-            colorscheme = {
-              enable_preview = true
-            }
+    local telescope = require('telescope')
+    telescope.setup{
+        pickers = {
+          colorscheme = {
+            enable_preview = true
           }
+        }
     }
   '';
 }
