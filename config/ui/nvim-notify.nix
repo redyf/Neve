@@ -21,7 +21,6 @@
   ];
   extraConfigLua = ''
     			local notify = require("notify")
-
     			local filtered_message = { "No information available" }
 
     			-- Override notify function to filter out messages

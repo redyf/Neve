@@ -1,7 +1,4 @@
-{ inputs
-, pkgs
-, ...
-}: {
+{
   plugins.telescope = {
     enable = true;
     extensions = {
