@@ -2,18 +2,18 @@
 {
   globals.mapleader = " ";
 
+  # TODO: Move general mappings to which-key
   keymaps = [
     # Disable arrow keys
     {
       mode = [ "n" "i" ];
       key = "<Up>";
       action = "<Nop>";
-      options =
-        {
-          silent = true;
-          noremap = true;
-          desc = "Disable Up arrow key";
-        };
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Disable Up arrow key";
+      };
     }
     {
       mode = [ "n" "i" ];
@@ -323,7 +323,7 @@
     {
       mode = "v";
       key = "K";
-      action = ":m '>-2<CR>gv=gv";
+      action = ":m '<-2<CR>gv=gv";
       options = {
         silent = true;
         desc = "Move down when line is highlighted";
