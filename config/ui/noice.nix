@@ -20,5 +20,17 @@
       enabled = true;
       backend = "nui";
     };
+    format = {
+      filter = {
+        pattern = [":%s*%%s*s:%s*" ":%s*%%s*s!%s*" ":%s*%%s*s/%s*" "%s*s:%s*" ":%s*s!%s*" ":%s*s/%s*"];
+        icon = "";
+        lang = "regex";
+      };
+      replace = {
+        pattern = [":%s*%%s*s:%w*:%s*" ":%s*%%s*s!%w*!%s*" ":%s*%%s*s/%w*/%s*" "%s*s:%w*:%s*" ":%s*s!%w*!%s*" ":%s*s/%w*/%s*"];
+        icon = "󱞪";
+        lang = "regex";
+      };
+    };
   };
 }
