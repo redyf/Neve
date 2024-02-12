@@ -41,6 +41,6 @@
         default = nvim;
       };
 
-      formatter = pkgs.nixpkgs-fmt;
+      formatter = pkgs.alejandra;
     });
 }
