@@ -6,7 +6,7 @@
   keymaps = [
     # Disable arrow keys
     {
-      mode = [ "n" "i" ];
+      mode = ["n" "i"];
       key = "<Up>";
       action = "<Nop>";
       options = {
@@ -16,7 +16,7 @@
       };
     }
     {
-      mode = [ "n" "i" ];
+      mode = ["n" "i"];
       key = "<Down>";
       action = "<Nop>";
       options = {
@@ -26,7 +26,7 @@
       };
     }
     {
-      mode = [ "n" "i" ];
+      mode = ["n" "i"];
       key = "<Right>";
       action = "<Nop>";
       options = {
@@ -36,7 +36,7 @@
       };
     }
     {
-      mode = [ "n" "i" ];
+      mode = ["n" "i"];
       key = "<Left>";
       action = "<Nop>";
       options = {
@@ -66,7 +66,7 @@
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>g";
       action = "+git";
     }
@@ -90,19 +90,19 @@
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>d";
       action = "+debug";
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>c";
       action = "+code";
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>t";
       action = "+test";
     }
@@ -379,6 +379,31 @@
       };
     }
 
+    # Remap for dealing with word wrap and adding jumps to the jumplist.
+    {
+      mode = "n";
+      key = "j";
+      action.__raw = "
+        [[(v:count > 1 ? 'm`' . v:count : 'g') . 'j']]
+      ";
+      options = {
+        expr = true;
+        desc = "Remap for dealing with word wrap and adding jumps to the jumplist.";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "k";
+      action.__raw = "
+        [[(v:count > 1 ? 'm`' . v:count : 'g') . 'k']]
+      ";
+      options = {
+        expr = true;
+        desc = "Remap for dealing with word wrap and adding jumps to the jumplist.";
+      };
+    }
+
     {
       mode = "n";
       key = "n";
@@ -409,7 +434,7 @@
 
     # Copy stuff to system clipboard with <leader> + y or just y to have it just in vim
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>y";
       action = "\"+y";
       options = {
@@ -418,7 +443,7 @@
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>Y";
       action = "\"+Y";
       options = {
@@ -428,7 +453,7 @@
 
     # Delete to void register
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<leader>D";
       action = "\"_d";
       options = {
@@ -453,27 +478,44 @@
     }
   ];
   extraConfigLua = ''
+    local notify = require("notify")
+
+    local function show_notification(message, level)
+      notify(message, level, { title = "conform.nvim" })
+    end
+
     function ToggleLineNumber()
     if vim.wo.number then
       vim.wo.number = false
+      show_notification("Line numbers disabled", "info")
     else
       vim.wo.number = true
         vim.wo.relativenumber = false
+        show_notification("Line numbers enabled", "info")
         end
         end
 
         function ToggleRelativeLineNumber()
         if vim.wo.relativenumber then
           vim.wo.relativenumber = false
+          show_notification("Relative line numbers disabled", "info")
         else
           vim.wo.relativenumber = true
             vim.wo.number = false
-            end
-            end
+            show_notification("Relative line numbers enabled", "info")
+          end
+        end
 
-            function ToggleWrap()
-            vim.wo.wrap = not vim.wo.wrap
-            end
+        function ToggleWrap()
+          if vim.wo.wrap then
+            vim.wo.wrap = false
+            show_notification("Wrap disabled", "info")
+          else
+            vim.wo.wrap = true
+              vim.wo.number = false
+              show_notification("Wrap enabled", "info")
+          end
+        end
 
     if vim.lsp.inlay_hint then
       vim.keymap.set(
