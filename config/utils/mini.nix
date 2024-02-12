@@ -9,7 +9,7 @@
           '';
         };
       };
-      cursorword = { };
+      cursorword = {};
     };
   };
 }
