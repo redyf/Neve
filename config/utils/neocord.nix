@@ -2,12 +2,12 @@
   extraPlugins = with pkgs.vimPlugins; [
     (pkgs.vimUtils.buildVimPlugin {
       pname = "neocord";
-      version = "2024-01-11";
+      version = "2024-02-12";
       src = pkgs.fetchFromGitHub {
         owner = "IogaMaster";
         repo = "neocord";
-        rev = "9b624d5189f699ab454e9515262c13965395b8dd";
-        sha256 = "0kvii7w1yqrzfidwky4ljmmsr33pciz1rw9v3kqf0ck36clqqxhy";
+        rev = "d5f51d466644fe3c62eda4c41e373ecdc299a367";
+        sha256 = "1gv7lkqgiljgazzm0r5nbnvj3rj0l376bcz3hf2d881h4xi2lq3l";
       };
     })
   ];
