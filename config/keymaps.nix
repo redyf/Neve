@@ -336,7 +336,27 @@
       action = "mzJ`z";
       options = {
         silent = true;
-        desc = "Allow cursor to stay in the same place after appending to current line ";
+        desc = "Allow cursor to stay in the same place after appeding to current line";
+      };
+    }
+
+    {
+      mode = "v";
+      key = "<";
+      action = "<gv";
+      options = {
+        silent = true;
+        desc = "Indent while remaining in visual mode.";
+      };
+    }
+
+    {
+      mode = "v";
+      key = ">";
+      action = ">gv";
+      options = {
+        silent = true;
+        desc = "Indent while remaining in visual mode.";
       };
     }
 
@@ -346,7 +366,7 @@
       action = "<C-d>zz";
       options = {
         silent = true;
-        desc = "Allow C-d and C-u to keep the cursor in the middle";
+        desc = "Allow <C-d> and <C-u> to keep the cursor in the middle";
       };
     }
 
