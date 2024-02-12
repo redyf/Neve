@@ -336,7 +336,27 @@
       action = "mzJ`z";
       options = {
         silent = true;
-        desc = "Allow cursor to stay in the same place after appending to current line ";
+        desc = "Allow cursor to stay in the same place after appeding to current line";
+      };
+    }
+
+    {
+      mode = "v";
+      key = "<";
+      action = "<gv";
+      options = {
+        silent = true;
+        desc = "Indent while remaining in visual mode.";
+      };
+    }
+
+    {
+      mode = "v";
+      key = ">";
+      action = ">gv";
+      options = {
+        silent = true;
+        desc = "Indent while remaining in visual mode.";
       };
     }
 
@@ -346,7 +366,7 @@
       action = "<C-d>zz";
       options = {
         silent = true;
-        desc = "Allow C-d and C-u to keep the cursor in the middle";
+        desc = "Allow <C-d> and <C-u> to keep the cursor in the middle";
       };
     }
 
@@ -356,6 +376,31 @@
       action = "<C-u>zz";
       options = {
         desc = "Allow C-d and C-u to keep the cursor in the middle";
+      };
+    }
+
+    # Remap for dealing with word wrap and adding jumps to the jumplist.
+    {
+      mode = "n";
+      key = "j";
+      action.__raw = "
+        [[(v:count > 1 ? 'm`' . v:count : 'g') . 'j']]
+      ";
+      options = {
+        expr = true;
+        desc = "Remap for dealing with word wrap and adding jumps to the jumplist.";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "k";
+      action.__raw = "
+        [[(v:count > 1 ? 'm`' . v:count : 'g') . 'k']]
+      ";
+      options = {
+        expr = true;
+        desc = "Remap for dealing with word wrap and adding jumps to the jumplist.";
       };
     }
 
@@ -433,27 +478,44 @@
     }
   ];
   extraConfigLua = ''
+    local notify = require("notify")
+
+    local function show_notification(message, level)
+      notify(message, level, { title = "conform.nvim" })
+    end
+
     function ToggleLineNumber()
     if vim.wo.number then
       vim.wo.number = false
+      show_notification("Line numbers disabled", "info")
     else
       vim.wo.number = true
         vim.wo.relativenumber = false
+        show_notification("Line numbers enabled", "info")
         end
         end
 
         function ToggleRelativeLineNumber()
         if vim.wo.relativenumber then
           vim.wo.relativenumber = false
+          show_notification("Relative line numbers disabled", "info")
         else
           vim.wo.relativenumber = true
             vim.wo.number = false
-            end
-            end
+            show_notification("Relative line numbers enabled", "info")
+          end
+        end
 
-            function ToggleWrap()
-            vim.wo.wrap = not vim.wo.wrap
-            end
+        function ToggleWrap()
+          if vim.wo.wrap then
+            vim.wo.wrap = false
+            show_notification("Wrap disabled", "info")
+          else
+            vim.wo.wrap = true
+              vim.wo.number = false
+              show_notification("Wrap enabled", "info")
+          end
+        end
 
     if vim.lsp.inlay_hint then
       vim.keymap.set(
