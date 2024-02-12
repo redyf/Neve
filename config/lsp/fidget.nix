@@ -12,18 +12,20 @@
       suppressOnInsert = true; # Suppress new messages while in insert mode
       ignoreDoneAlready = false; # Ignore new tasks that are already complete
       ignoreEmptyMessage = false; # Ignore new tasks that don't contain a message
-      clearOnDetach = # Clear notification group when LSP server detaches
+      clearOnDetach =
+        # Clear notification group when LSP server detaches
         ''
           function(client_id)
             local client = vim.lsp.get_client_by_id(client_id)
             return client and client.name or nil
           end
         '';
-      notificationGroup = # How to get a progress message's notification group key
+      notificationGroup =
+        # How to get a progress message's notification group key
         ''
           function(msg) return msg.lsp_client.name end
         '';
-      ignore = [ ]; # List of LSP servers to ignore
+      ignore = []; # List of LSP servers to ignore
       lsp = {
         progressRingbufSize = 0; # Configure the nvim's LSP progress ring buffer size
       };
@@ -56,7 +58,6 @@
             name = "rust-analyzer";
           };
         }; # Override options from the default notification config
-
       };
     };
     notification = {
@@ -91,10 +92,10 @@
         stackUpwards = true; # Display notification items from bottom to top
         iconSeparator = " "; # Separator between group name and icon
         groupSeparator = "---"; # Separator between notification groups
-        groupSeparatorHl = # Highlight group used for group separator
+        groupSeparatorHl =
+          # Highlight group used for group separator
           "Comment";
       };
     };
   };
 }
-

@@ -1,8 +1,7 @@
 let
   javaTestPath = "/nix/store/j3nvmhvj2pmnykw5pbm51dn0bz4cv6j3-vscode-extension-vscjava-vscode-java-test-0.38.2023032402/share/vscode/extensions/vscjava.vscode-java-test/server/com.microsoft.java.test.plugin-0.38.2.jar
  ";
-in
-{
+in {
   plugins.nvim-jdtls = {
     enable = true;
     cmd = [
@@ -25,7 +24,6 @@ in
   };
 }
 #
-
 # extraConfigLua = ''
 #   local jdtls = require("jdtls")
 #   local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -80,3 +78,4 @@ in
 #
 #   jdtls.start_or_attach(config)
 # '';
+

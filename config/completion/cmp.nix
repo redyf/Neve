@@ -15,7 +15,7 @@
         expand = "luasnip";
       };
       formatting = {
-        fields = [ "kind" "abbr" "menu" ];
+        fields = ["kind" "abbr" "menu"];
         expandableIndicator = true;
       };
       window = {
@@ -49,10 +49,9 @@
         }
       ];
 
-
       mapping = {
         "<Tab>" = {
-          modes = [ "i" "s" ];
+          modes = ["i" "s"];
           action = ''
              function(fallback)
              	if cmp.visible() then
@@ -66,7 +65,7 @@
           '';
         };
         "<S-Tab>" = {
-          modes = [ "i" "s" ];
+          modes = ["i" "s"];
           action = ''
                  function(fallback)
             	if cmp.visible() then
@@ -105,12 +104,12 @@
         };
       };
     };
-    cmp-nvim-lsp = { enable = true; }; # lsp
-    cmp-buffer = { enable = true; };
-    copilot-cmp = { enable = true; }; # copilot suggestions
-    cmp-path = { enable = true; }; # file system paths
-    cmp_luasnip = { enable = true; }; # snippets
-    cmp-cmdline = { enable = false; }; # autocomplete for cmdline
+    cmp-nvim-lsp = {enable = true;}; # lsp
+    cmp-buffer = {enable = true;};
+    copilot-cmp = {enable = true;}; # copilot suggestions
+    cmp-path = {enable = true;}; # file system paths
+    cmp_luasnip = {enable = true;}; # snippets
+    cmp-cmdline = {enable = false;}; # autocomplete for cmdline
   };
   extraConfigLua = ''
       luasnip = require("luasnip")
