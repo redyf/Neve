@@ -140,7 +140,6 @@
     };
   };
   keymaps = [
-
     {
       mode = "n";
       key = "<leader>fp";

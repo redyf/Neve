@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   extraPlugins = with pkgs.vimPlugins; [
     (pkgs.vimUtils.buildVimPlugin {
       pname = "neotest-java";
