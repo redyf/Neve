@@ -52,7 +52,7 @@
     ./ui/nui.nix
 
     ./utils/better-escape.nix
-    ./utils/discordrpc.nix
+    ./utils/neocord.nix
     ./utils/flash.nix
     ./utils/hardtime.nix
     ./utils/harpoon.nix
