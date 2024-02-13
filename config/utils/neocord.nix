@@ -27,7 +27,7 @@
         buttons             = true,                       -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
         file_assets         = {},                         -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
         show_time           = true,                       -- Show the timer
-        global_timer        = false,
+        global_timer        = true, -- if set true, timer won't update when any event are triggered
 
         -- Rich Presence text options
         editing_text        = "Editing %s",               -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
