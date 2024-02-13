@@ -29,7 +29,7 @@
       };
     }
     {
-      mode = ["n" "v"];
+      mode = "n";
       key = "<leader>cf";
       action = "<cmd>lua require('conform').format()<cr>";
       options = {
@@ -37,11 +37,11 @@
         desc = "Format Buffer";
       };
     }
-    # TODO: Try conform formatting instead of lsp buffer
+
     {
       mode = "v";
       key = "<leader>cF";
-      action = "<cmd>lua vim.lsp.buf.format()<cr>";
+      action = "<cmd>lua require('conform').format()<cr>";
       options = {
         silent = true;
         desc = "Format Lines";
