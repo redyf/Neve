@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  extraPlugins = with pkgs.vimPlugins; [
-    (pkgs.vimUtils.buildVimPlugin {
+  extraPlugins = with pkgs.vimUtils; [
+    (buildVimPlugin {
       pname = "ultimate-autopair.nvim";
       version = "2024-02-05";
       src = pkgs.fetchFromGitHub {

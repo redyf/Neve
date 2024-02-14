@@ -41,6 +41,7 @@
     ./snippets/luasnip.nix
 
     ./statusline/lualine.nix
+    ./statusline/staline.nix
 
     ./telescope/telescope.nix
 
@@ -72,7 +73,7 @@
     ./utils/tmux-navigator.nix
     ./utils/todo-comments.nix
     ./utils/toggleterm.nix
-    ./utils/ultimate-autopairs.nix
+    ./utils/ultimate-autopair.nix
     ./utils/undotree.nix
     ./utils/vim-be-good.nix
     ./utils/wakatime.nix
