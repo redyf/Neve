@@ -1,6 +1,6 @@
 {
   plugins.lualine = {
-    enable = true;
+    enable = false;
     alwaysDivideMiddle = true;
     globalstatus = true;
     ignoreFocus = ["neo-tree"];
