@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  extraPlugins = with pkgs.vimPlugins; [
-    (pkgs.vimUtils.buildVimPlugin {
+  extraPlugins = with pkgs.vimUtils; [
+    (buildVimPlugin {
       pname = "sidebar.nvim";
       version = "2024-02-07";
       src = pkgs.fetchFromGitHub {
