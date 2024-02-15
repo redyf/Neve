@@ -24,6 +24,9 @@
         statix.enable = true;
       };
       diagnostics = {
+        checkstyle = {
+          enable = true;
+        };
         statix = {
           enable = true;
         };
@@ -48,6 +51,9 @@
               extra_args = { "--no-semi", "--single-quote" },
             }
           '';
+        };
+        google_java_format = {
+          enable = true;
         };
         rustfmt = {
           enable = true;
