@@ -13,12 +13,30 @@
   ];
   extraConfigLua = ''
       require("staline").setup({
-        defaults = {
+      sections = {
+        left = { "-mode", " ", "branch" },
+        mid = { "lsp_name" },
+        right = { "file_name", "line_column" },
+      },
+      inactive_sections = {
+        left = { "-mode", " ", "branch" },
+        mid = { "lsp_name" },
+        right = { "file_name", "line_column" },
+      },
+      defaults = {
         left_separator = " ",
         right_separator = "  ",
         branch_symbol = " ",
         mod_symbol = "",
         line_column = "[%l/%L]",
+        inactive_color = "#80a6f2", --#303030 is the default
+        inactive_bgcolor = "none",
+      },
+      special_table = {
+        lazy = { "Plugins", "💤 " },
+        TelescopePrompt = { "Telescope", "  " },
+        oil = { "Oil", "󰏇 " },
+        lazygit = { "LazyGit", " " },
       },
       mode_icons = {
         ["n"] = "NORMAL",
@@ -41,15 +59,6 @@
         ["R"] = "REPLACE",
         ["c"] = "COMMAND",
         ["t"] = "TERMINAL",
-      },
-      special_table = {
-        lazy = { "Plugins", "💤 " },
-        TelescopePrompt = { "Telescope", "  " },
-      },
-      sections = {
-        left = { "-mode", " ", "branch" },
-        mid = { "lsp_name" },
-        right = { "file_name", "line_column" },
       },
     })
   '';
