@@ -4,8 +4,6 @@
     logger = {
       level = "warn"; # “off”, “error”, “warn”, “info”, “debug”, “trace”
       floatPrecision = 0.01; # Limit the number of decimals displayed for floats
-      # Where Fidget writes its logs to
-      path = "string.format('%s/fidget.nvim.log', vim.fn.stdpath('cache'))";
     };
     progress = {
       pollRate = 0; # How and when to poll for progress messages
