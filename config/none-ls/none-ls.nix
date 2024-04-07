@@ -35,9 +35,6 @@
         flake8 = {
           enable = true;
         };
-        eslint_d = {
-          enable = true;
-        };
       };
       formatting = {
         alejandra = {
