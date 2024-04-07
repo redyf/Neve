@@ -19,7 +19,6 @@
     '';
     sources = {
       code_actions = {
-        eslint_d.enable = true;
         gitsigns.enable = true;
         statix.enable = true;
       };
