@@ -26,12 +26,11 @@
 <details>
     <summary>Showcase</summary>
 
-![Neve](https://cdn.discordapp.com/attachments/933711967217123411/1204637351066992740/image.png?ex=65d574f5&is=65c2fff5&hm=d9e45dd67ccc5b0f2a62e6215464f5849079ad6139d1187acdbb2ad3ab639916&)
-![Neve2](https://cdn.discordapp.com/attachments/933711967217123411/1204637623679717426/image.png?ex=65d57536&is=65c30036&hm=9a8cdf58b7f8b5bf660829e7a08e0d3d090c34d06453d3a9f17123887af49d2f&)
-![Neve3](https://cdn.discordapp.com/attachments/933711967217123411/1204637960369213450/image.png?ex=65d57586&is=65c30086&hm=96ab84f41879b0660964ff92d8d099d83c0f319291bc391d55d011bf141510f1&)
-![Neve4](https://cdn.discordapp.com/attachments/933711967217123411/1204638486066368512/image.png?ex=65d57604&is=65c30104&hm=fbbfbf43e8245e37585b4a4c8b7a4f3298845726720fbc1c77c024e52d576e87&)
-![Neve5](https://cdn.discordapp.com/attachments/933711967217123411/1204638725833883728/image.png?ex=65d5763d&is=65c3013d&hm=31898ca3921d23b907ef798296e0a0a4283b1cf3f2e357e43bb5fe91c1d51005&)
-![Neve6](https://cdn.discordapp.com/attachments/933711967217123411/1204640737065435146/image.png?ex=65d5781c&is=65c3031c&hm=8149a13584c880d483e951ec275e174c05716dea62dade6962317b3756be7c71&)
+![Neve](./assets/showcase1.png)
+![Neve2](./assets/showcase2.png)
+![Neve3](./assets/showcase3.png)
+![Neve4](./assets/showcase4.png)
+![Neve5](./assets/showcase5.png)
 
 </details>
 
