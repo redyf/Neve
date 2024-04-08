@@ -1,115 +1,77 @@
 {
   plugins = {
-    nvim-cmp = {
-      enable = true;
-      autoEnableSources = true;
-      experimental = {
-        ghost_text = true;
-      };
-      performance = {
-        debounce = 60;
-        fetchingTimeout = 200;
-        maxViewEntries = 30;
-      };
-      snippet = {
-        expand = "luasnip";
-      };
-      formatting = {
-        fields = ["kind" "abbr" "menu"];
-        expandableIndicator = true;
-      };
-      window = {
-        completion = {
-          border = "rounded";
-          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
-        };
-        documentation = {
-          border = "rounded";
-        };
-      };
-      sources = [
-        {
-          name = "nvim_lsp"; # lsp
-        }
-        {
-          name = "buffer"; # text within current buffer
-          option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          keywordLength = 3;
-        }
-        {
-          name = "copilot"; # copilot suggestions
-        }
-        {
-          name = "path"; # file system paths
-          keywordLength = 3;
-        }
-        {
-          name = "luasnip"; # snippets
-          keywordLength = 3;
-        }
-      ];
-
-      mapping = {
-        "<Tab>" = {
-          modes = ["i" "s"];
-          action = ''
-             function(fallback)
-             	if cmp.visible() then
-            		cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-            	luasnip.expand_or_jump()
-            else
-            fallback()
-                 end
-            end
-          '';
-        };
-        "<S-Tab>" = {
-          modes = ["i" "s"];
-          action = ''
-                 function(fallback)
-            	if cmp.visible() then
-            		cmp.select_prev_item()
-            	elseif luasnip.jumpable(-1) then
-            		luasnip.jump(-1)
-            	else
-            		fallback()
-            	end
-            end
-          '';
-        };
-        "<C-j>" = {
-          action = "cmp.mapping.select_next_item()";
-        };
-        "<C-k>" = {
-          action = "cmp.mapping.select_prev_item()";
-        };
-        "<C-e>" = {
-          action = "cmp.mapping.abort()";
-        };
-        "<C-b>" = {
-          action = "cmp.mapping.scroll_docs(-4)";
-        };
-        "<C-f>" = {
-          action = "cmp.mapping.scroll_docs(4)";
-        };
-        "<C-Space>" = {
-          action = "cmp.mapping.complete()";
-        };
-        "<CR>" = {
-          action = "cmp.mapping.confirm({ select = true })";
-        };
-        "<S-CR>" = {
-          action = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
-        };
-      };
-    };
     cmp-nvim-lsp = {enable = true;}; # lsp
     cmp-buffer = {enable = true;};
     copilot-cmp = {enable = true;}; # copilot suggestions
     cmp-path = {enable = true;}; # file system paths
     cmp_luasnip = {enable = true;}; # snippets
     cmp-cmdline = {enable = false;}; # autocomplete for cmdline
+    cmp = {
+      enable = true;
+      autoEnableSources = true;
+      extraOptions = {
+        experimental = {
+          ghost_text = true;
+        };
+      };
+      settings = {
+        # FIX: Fix error in mappings that's breaking Neve
+
+        mapping = {
+          __raw = ''
+            cmp.mapping.preset.insert({
+            ['<C-j>'] = cmp.mapping.select_next_item(),
+            ['<C-k>'] = cmp.mapping.select_prev_item(),
+            ['<C-e>'] = cmp.mapping.abort(),
+
+            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+
+             ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+             ['<C-Space>'] = cmp.mapping.complete(),
+
+             ['<CR>'] = cmp.mapping.confirm({ select = true }),
+
+             ['<S-CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+            })
+          '';
+        };
+        snippet = {
+          expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+        };
+        sources = {
+          __raw = ''
+            cmp.config.sources({
+              {name = 'nvim_lsp'},
+              {name = 'copilot'},
+              {name = 'path'},
+              {name = 'luasnip'},
+              {name = 'cmdline'},
+              }, {
+            {name = 'buffer'},
+            })
+          '';
+        };
+        performance = {
+          debounce = 60;
+          fetching_timeout = 200;
+          max_view_entries = 30;
+        };
+        window = {
+          completion = {
+            border = "rounded";
+            winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+          };
+          documentation = {
+            border = "rounded";
+          };
+        };
+        formatting = {
+          fields = ["kind" "abbr" "menu"];
+          expandable_indicator = true;
+        };
+      };
+    };
   };
   extraConfigLua = ''
       luasnip = require("luasnip")

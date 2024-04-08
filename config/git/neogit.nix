@@ -1,7 +1,6 @@
 {
   plugins.neogit = {
     enable = true;
-    disableBuiltinNotifications = true;
   };
   keymaps = [
     {

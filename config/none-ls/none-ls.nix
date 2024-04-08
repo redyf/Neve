@@ -29,12 +29,6 @@
         statix = {
           enable = true;
         };
-        luacheck = {
-          enable = true;
-        };
-        flake8 = {
-          enable = true;
-        };
       };
       formatting = {
         alejandra = {
@@ -51,9 +45,6 @@
         google_java_format = {
           enable = true;
         };
-        rustfmt = {
-          enable = true;
-        };
         stylua = {
           enable = true;
         };
@@ -64,9 +55,6 @@
               extra_args = { "--fast" },
             }
           '';
-        };
-        jq = {
-          enable = true;
         };
       };
     };
