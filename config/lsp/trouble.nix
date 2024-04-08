@@ -1,8 +1,11 @@
 {
   plugins.trouble = {
     enable = true;
-    autoClose = true;
+    settings = {
+      auto_close = true;
+    };
   };
+  # TODO: Add keybinds to close trouble (q would be nice), rn I need to use :x to close it...
   keymaps = [
     {
       mode = "n";
