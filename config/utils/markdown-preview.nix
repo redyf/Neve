@@ -1,8 +1,10 @@
 {
   plugins.markdown-preview = {
     enable = true;
-    browser = "floorp";
-    theme = "dark";
+    settings = {
+      browser = "floorp";
+      theme = "dark";
+    };
   };
   keymaps = [
     {

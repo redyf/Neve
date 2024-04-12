@@ -1,11 +1,9 @@
 {
   plugins.telescope = {
     enable = true;
+
     extensions = {
       fzf-native = {
-        enable = true;
-      };
-      project-nvim = {
         enable = true;
       };
       ui-select = {
@@ -20,14 +18,16 @@
       };
     };
     # If you'd prefer Telescope not to enter a normal-like mode when hitting escape (and instead exiting), you can map <Esc> to do so via:
-    defaults = {
-      mappings = {
-        i = {
-          "<esc>" = {
-            __raw = ''
-              function(...)
-                return require("telescope.actions").close(...)
-              end'';
+    settings = {
+      defaults = {
+        mappings = {
+          i = {
+            "<esc>" = {
+              __raw = ''
+                function(...)
+                  return require("telescope.actions").close(...)
+                end'';
+            };
           };
         };
       };
