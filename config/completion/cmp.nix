@@ -8,8 +8,8 @@
     cmp-cmdline = {enable = false;}; # autocomplete for cmdline
     cmp = {
       enable = true;
-      autoEnableSources = true;
-      extraOptions = {
+      autoEnableSources = false;
+      settings = {
         experimental = {
           ghost_text = true;
         };
