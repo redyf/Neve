@@ -15,8 +15,6 @@
         };
       };
       settings = {
-        # FIX: Fix error in mappings that's breaking Neve
-
         mapping = {
           __raw = ''
             cmp.mapping.preset.insert({

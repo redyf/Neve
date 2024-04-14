@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       trouble = true;
-      currentLineBlame = false;
+      current_line_blame = false;
     };
   };
   keymaps = [
