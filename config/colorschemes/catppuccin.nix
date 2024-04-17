@@ -8,10 +8,11 @@
           dark = "mocha";
         };
         flavour = "mocha"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
-        disableBold = false;
-        disableItalic = false;
-        disableUnderline = false;
-        transparentBackground = true;
+        disable_bold = false;
+        disable_italic = false;
+        disable_underline = false;
+        transparent_background = true;
+        term_colors = true;
         integrations = {
           cmp = true;
           noice = true;
