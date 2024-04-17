@@ -2,10 +2,14 @@
   colorschemes = {
     rose-pine = {
       enable = false;
-      style = "main"; #  "main", "moon", "dawn" or raw lua code
-      disableItalics = false;
-      transparentFloat = true;
-      transparentBackground = true;
+      variant = "main"; #  "main", "moon", "dawn" or raw lua code
+      settings = {
+        styles = {
+          italic = true;
+          bold = true;
+          transparency = false;
+        };
+      };
     };
   };
 }
