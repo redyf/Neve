@@ -69,7 +69,7 @@ However if you'd like to give it a try before installing, <b>nix run github:redy
 
 2- Run nix flake update, then Neve should be available for installation.
 
-3- Install it by adding inputs.Neve.packages.${system}.default to your environment.systemPackages or home.packages if you're using home-manager.
+3- Install it by adding inputs.Neve.packages.${pkgs.system}.default to your environment.systemPackages or home.packages if you're using home-manager.
 
 4- Rebuild your system and you should be done :
 ```
