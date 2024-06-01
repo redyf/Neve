@@ -12,7 +12,7 @@
     <a href="https://github.com/redyf/Neve">
         <img src="https://img.shields.io/github/repo-size/redyf/Neve?color=ea999c&labelColor=303446&style=for-the-badge">
     </a>
-    <a href="https://github.com/redyf/Neve/blob/main/.github/LICENCE">
+    <a href="https://github.com/redyf/Neve/blob/main/LICENCE">
         <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=ca9ee6&colorA=313244&colorB=cba6f7"/>
     </a>
     <br>
