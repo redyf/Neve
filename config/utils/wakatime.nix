@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  extraPlugins = with pkgs.vimPlugins; [
-    vim-wakatime
-  ];
+{
+  plugins.wakatime = {
+    enable = true;
+  };
 }
