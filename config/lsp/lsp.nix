@@ -24,7 +24,7 @@
             };
           };
         };
-        nil_ls = {enable = true;};
+        nil-ls = {enable = true;};
         tsserver = {
           enable = false;
           filetypes = ["javascript" "javascriptreact" "typescript" "typescriptreact"];
