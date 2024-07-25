@@ -77,7 +77,6 @@
     ./utils/toggleterm.nix
     ./utils/ultimate-autopair.nix
     ./utils/undotree.nix
-    ./utils/vim-be-good.nix
     ./utils/wakatime.nix
     ./utils/whichkey.nix
     ./utils/wilder.nix
