@@ -19,8 +19,8 @@
     ./filetrees/neo-tree.nix
     ./git/gitsigns.nix
     ./git/diffview.nix
-    # ./git/lazygit.nix
-    ./git/neogit.nix
+    ./git/lazygit.nix
+    # ./git/neogit.nix
 
     ./languages/nvim-jdtls.nix
     ./languages/nvim-lint.nix
@@ -39,6 +39,8 @@
 
     ./none-ls/none-ls.nix
 
+    ./pluginmanagers/lazy.nix
+
     ./snippets/luasnip.nix
 
     ./statusline/lualine.nix
@@ -55,7 +57,6 @@
 
     ./utils/better-escape.nix
     ./utils/neocord.nix
-    ./utils/flash.nix
     ./utils/hardtime.nix
     ./utils/harpoon.nix
     ./utils/illuminate.nix
