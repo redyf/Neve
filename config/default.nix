@@ -11,7 +11,7 @@
     ./colorschemes/rose-pine.nix
 
     ./completion/cmp.nix
-    ./completion/copilot.nix
+    # ./completion/copilot.nix
     ./completion/lspkind.nix
 
     ./dap/dap.nix
@@ -20,7 +20,7 @@
     ./git/gitsigns.nix
     ./git/diffview.nix
     ./git/lazygit.nix
-    # ./git/neogit.nix
+    #./git/neogit.nix
 
     ./languages/nvim-jdtls.nix
     ./languages/nvim-lint.nix
@@ -56,14 +56,19 @@
     ./ui/nui.nix
 
     ./utils/better-escape.nix
+<<<<<<< HEAD
     ./utils/neocord.nix
+=======
+    # ./utils/neocord.nix
+    ./utils/flash.nix
+>>>>>>> redyf-main
     ./utils/hardtime.nix
     ./utils/harpoon.nix
     ./utils/illuminate.nix
     ./utils/markdown-preview.nix
     ./utils/mini.nix
     ./utils/neodev.nix
-    ./utils/neotest.nix
+    #./utils/neotest.nix
     ./utils/nvim-autopairs.nix
     ./utils/nvim-colorizer.nix
     ./utils/nvim-surround.nix
