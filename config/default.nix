@@ -56,12 +56,8 @@
     ./ui/nui.nix
 
     ./utils/better-escape.nix
-<<<<<<< HEAD
     ./utils/neocord.nix
-=======
-    # ./utils/neocord.nix
     ./utils/flash.nix
->>>>>>> redyf-main
     ./utils/hardtime.nix
     ./utils/harpoon.nix
     ./utils/illuminate.nix
