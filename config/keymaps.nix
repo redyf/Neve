@@ -45,68 +45,6 @@
         desc = "Disable Left arrow key";
       };
     }
-
-    # General maps
-    {
-      mode = "n";
-      key = "<leader>f";
-      action = "+find/file";
-    }
-
-    {
-      mode = "n";
-      key = "<leader>s";
-      action = "+search";
-    }
-
-    {
-      mode = "n";
-      key = "<leader>q";
-      action = "+quit/session";
-    }
-
-    {
-      mode = ["n" "v"];
-      key = "<leader>g";
-      action = "+git";
-    }
-
-    {
-      mode = "n";
-      key = "<leader>u";
-      action = "+ui";
-    }
-
-    {
-      mode = "n";
-      key = "<leader>w";
-      action = "+windows";
-    }
-
-    {
-      mode = "n";
-      key = "<leader><Tab>";
-      action = "+tab";
-    }
-
-    {
-      mode = ["n" "v"];
-      key = "<leader>d";
-      action = "+debug";
-    }
-
-    {
-      mode = ["n" "v"];
-      key = "<leader>c";
-      action = "+code";
-    }
-
-    {
-      mode = ["n" "v"];
-      key = "<leader>t";
-      action = "+test";
-    }
-
     # Tabs
     {
       mode = "n";
