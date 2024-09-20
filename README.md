@@ -62,19 +62,33 @@ However if you'd like to give it a try before installing, <b>nix run github:redy
 
 [Flakes](https://nixos.wiki/wiki/Flakes)
 
-    After enabling it, follow the steps below:
+After enabling it, follow the steps below:
 
-```
 1- Go to flake.nix and add Neve.url = "github:redyf/Neve" to your inputs.
 
 2- Run nix flake update, then Neve should be available for installation.
 
-3- Install it by adding inputs.Neve.packages.${pkgs.system}.default to your environment.systemPackages or home.packages if you're using home-manager.
+3- Install it by adding `inputs.Neve.packages.${pkgs.system}.default` to your environment.systemPackages or home.packages if you're using home-manager.
 
 4- Rebuild your system and you should be done :
-```
 
 </details>
+
+## How to customize the install
+
+<p>If you would like to customize Neve to your liking, check this out!</p>
+
+1- Fork the repo (you can also change the name of the fork if you want).
+
+2- Clone the fork.
+
+3- Make the changes you want, such as enabling/disabling plugins, changing colorschemes, changing neovim options, etc.
+
+4- Add the fork to your flake.nix file, the original is `Neve.url = “github:redyf/Neve”`. If a user called foo forks the repo and renames it to bar, it would be `bar.url = “github:foo/bar”`.
+
+5- Update your inputs and install the fork with `inputs.Neve.packages.${pkgs.system}.default`.
+
+6- Rebuild the system and you should be done!
 
 ## Quick Start
 
