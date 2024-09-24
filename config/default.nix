@@ -20,7 +20,7 @@
     ./git/gitsigns.nix
     ./git/diffview.nix
     ./git/lazygit.nix
-    # ./git/neogit.nix
+    ./git/neogit.nix
 
     ./languages/nvim-jdtls.nix
     ./languages/nvim-lint.nix
@@ -54,10 +54,10 @@
     ./ui/noice.nix
     ./ui/nvim-notify.nix
     ./ui/nui.nix
+    ./ui/web-devicons.nix
 
     ./utils/better-escape.nix
     ./utils/neocord.nix
-    ./utils/hardtime.nix
     ./utils/harpoon.nix
     ./utils/illuminate.nix
     ./utils/markdown-preview.nix
