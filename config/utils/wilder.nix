@@ -1,7 +1,11 @@
 {
   plugins.wilder = {
-    enable = true;
-    modes = [":" "/" "?"];
+    enable = false;
+    modes = [
+      ":"
+      "/"
+      "?"
+    ];
     pipeline = [
       ''
             wilder.branch(
