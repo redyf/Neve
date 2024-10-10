@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   config = {
     opts = {
       # Enable relative line numbers
@@ -47,7 +48,11 @@
       updatetime = 50; # faster completion (4000ms default)
 
       # Set completeopt to have a better completion experience
-      completeopt = ["menuone" "noselect" "noinsert"]; # mostly just for cmp
+      completeopt = [
+        "menuone"
+        "noselect"
+        "noinsert"
+      ]; # mostly just for cmp
 
       # Enable persistent undo history
       swapfile = false;
@@ -61,7 +66,7 @@
       signcolumn = "yes";
 
       # Enable cursor line highlight
-      cursorline = true; # Highlight the line where the cursor is located
+      cursorline = false; # Highlight the line where the cursor is located
 
       # Set fold settings
       # These options were reccommended by nvim-ufo
@@ -77,8 +82,8 @@
       # Place a column line
       colorcolumn = "80";
 
-      # Reduce which-key timeout to 10ms
-      timeoutlen = 100;
+      # Reduce which-key timeout 
+      timeoutlen = 200;
 
       # Set encoding type
       encoding = "utf-8";
@@ -111,6 +116,8 @@
       formatexpr = "v:lua.require'conform'.formatexpr()";
 
       laststatus = 3; # (https://neovim.io/doc/user/options.html#'laststatus')
+
+      inccommand = "split"; # (https://neovim.io/doc/user/options.html#'inccommand')
     };
 
     extraConfigLua = ''
@@ -119,7 +126,6 @@
       local o = vim.o
         -- Neovide
       if g.neovide then
-        -- Neovide options
         g.neovide_fullscreen = false
         g.neovide_hide_mouse_when_typing = false
         g.neovide_refresh_rate = 165
@@ -132,13 +138,7 @@
         g.neovide_transparency = 0.8
 
         -- Neovide Fonts
-        o.guifont = "MonoLisa Trial:Medium:h15"
-        -- o.guifont = "CommitMono:Medium:h15"
-        -- o.guifont = "JetBrainsMono Nerd Font:h14:Medium:i"
-        -- o.guifont = "FiraMono Nerd Font:Medium:h14"
-        -- o.guifont = "CaskaydiaCove Nerd Font:h14:b:i"
-        -- o.guifont = "BlexMono Nerd Font Mono:h14:Medium:i"
-        -- o.guifont = "Liga SFMono Nerd Font:b:h15"
+        o.guifont = "JetBrainsMono Nerd Font:h14:Medium:i"
       end
     '';
   };
