@@ -1,5 +1,11 @@
+{ lib, config, ... }:
 {
-  plugins.persistence = {
-    enable = true;
+  options = {
+    persistence.enable = lib.mkEnableOption "Enable persistence module";
+  };
+  config = lib.mkIf config.persistence.enable {
+    plugins.persistence = {
+      enable = true;
+    };
   };
 }

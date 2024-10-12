@@ -1,5 +1,11 @@
+{ lib, config, ... }:
 {
-  plugins.nvim-autopairs = {
-    enable = false;
+  options = {
+    nvim-autopairs.enable = lib.mkEnableOption "Enable nvim-autopairs module";
+  };
+  config = lib.mkIf config.nvim-autopairs.enable {
+    plugins.nvim-autopairs = {
+      enable = true;
+    };
   };
 }

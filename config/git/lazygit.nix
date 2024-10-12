@@ -1,20 +1,27 @@
+{ lib, config, ... }:
 {
-  plugins.lazygit = {
-    enable = true;
+  options = {
+    lazygit.enable = lib.mkEnableOption "Enable lazygit module";
   };
+  config = lib.mkIf config.lazygit.enable {
 
-  extraConfigLua = ''
-    require("telescope").load_extension("lazygit")
-  '';
+    plugins.lazygit = {
+      enable = true;
+    };
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>gg";
-      action = "<cmd>LazyGit<CR>";
-      options = {
-        desc = "LazyGit (root dir)";
-      };
-    }
-  ];
+    extraConfigLua = ''
+      require("telescope").load_extension("lazygit")
+    '';
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>gg";
+        action = "<cmd>LazyGit<CR>";
+        options = {
+          desc = "LazyGit (root dir)";
+        };
+      }
+    ];
+  };
 }
