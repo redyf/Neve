@@ -96,11 +96,11 @@ Neve is highly customizable. Here are some important files for configuring your 
 
 - **config/default.nix:** This file contains the main configuration file. You can add or delete plugins as you like.
 
-- **config/sets.nix:** In this file, you can add or remove options and adjust their specific settings.
+- **config/sets/set.nix:** In this file, you can add or remove options and adjust their specific settings.
 
-- **config/keymaps.nix:** This file contains custom key mappings. You can add your own keyboard shortcuts to enhance productivity.
+- **config/keys.nix:** This file contains custom key mappings. You can add your own keyboard shortcuts to enhance productivity.
 
-- **config/lsp/lsp.nix:** Here you can configure your preferred Language Servers.
+- **config/lsp/lsp-nvim.nix:** Here you can configure your preferred Language Servers.
 
 - **config/lsp/conform.nix:** Configure Formatters for the desired languages.
 
