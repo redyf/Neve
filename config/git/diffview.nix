@@ -1,5 +1,12 @@
+{ lib, config, ... }:
 {
-  plugins.diffview = {
-    enable = true;
+  options = {
+    diffview.enable = lib.mkEnableOption "Enable diffview module";
+  };
+  config = lib.mkIf config.diffview.enable {
+
+    plugins.diffview = {
+      enable = true;
+    };
   };
 }

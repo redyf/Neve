@@ -1,12 +1,18 @@
+{ lib, config, ... }:
 {
-  plugins.neogit = {
-    enable = false;
+  options = {
+    neogit.enable = lib.mkEnableOption "Enable neogit module";
   };
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>gg";
-      action = "<cmd>Neogit<CR>";
-    }
-  ];
+  config = lib.mkIf config.neogit.enable {
+    plugins.neogit = {
+      enable = false;
+    };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>gg";
+        action = "<cmd>Neogit<CR>";
+      }
+    ];
+  };
 }
