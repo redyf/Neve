@@ -1,9 +1,16 @@
-{pkgs, ...}: {
-  extraPlugins = with pkgs.vimPlugins; [
-    nvim-surround
-  ];
-
-  extraConfigLua = ''
-    require("nvim-surround").setup()
-  '';
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  options = {
+    nvim-surround.enable = lib.mkEnableOption "Enable nvim-surround module";
+  };
+  config = lib.mkIf config.nvim-surround.enable {
+    plugins.nvim-surround = {
+      enable = true;
+    };
+  };
 }
