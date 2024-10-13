@@ -37,7 +37,7 @@
     better-escape.enable = lib.mkDefault true;
     cloak.enable = lib.mkDefault true;
     harpoon.enable = lib.mkDefault true;
-    markdown-preview.enable = lib.mkDefault true;
+    markdown-preview.enable = lib.mkDefault false;
     mini.enable = lib.mkDefault true;
     neocord.enable = lib.mkDefault true;
     neotest.enable = lib.mkDefault true;

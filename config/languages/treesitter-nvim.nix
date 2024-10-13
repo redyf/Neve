@@ -7,10 +7,6 @@
     plugins.treesitter = {
       enable = true;
       settings = {
-        auto_install = true;
-        folding = {
-          enable = true;
-        };
         highlight = {
           enable = true;
         };
@@ -20,6 +16,36 @@
         autopairs = {
           enable = true;
         };
+        folding = {
+          enable = true;
+        };
+        ensure_installed = [
+          "bash"
+          "c"
+          "html"
+          "css"
+          "javascript"
+          "jsdoc"
+          "json"
+          "lua"
+          "luadoc"
+          "luap"
+          "nix"
+          "rust"
+          "java"
+          "markdown"
+          "markdown_inline"
+          "python"
+          "query"
+          "regex"
+          "tsx"
+          "typescript"
+          "vim"
+          "vimdoc"
+          "toml"
+          "yaml"
+        ];
+        auto_install = true;
         incremental_selection = {
           enable = true;
           keymaps = {
