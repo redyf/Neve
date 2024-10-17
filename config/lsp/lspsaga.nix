@@ -5,7 +5,7 @@
   };
   config = lib.mkIf config.lspsaga.enable {
     plugins.lspsaga = {
-      enable = false;
+      enable = true;
       beacon = {
         enable = true;
       };

@@ -5,7 +5,7 @@
   };
   config = lib.mkIf config.none-ls-nvim.enable {
     plugins.none-ls = {
-      enable = false;
+      enable = true;
       settings = {
         enableLspFormat = false;
         updateInInsert = false;
