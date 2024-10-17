@@ -74,6 +74,41 @@ After enabling it, follow the steps below:
 
 </details>
 
+<details>
+    <summary><b>How to enable/disable modules</b></summary>
+For those who aren't familiar with the modular structure of nix, make sure to check this great tutorial made by Vimjoyer.
+    
+[Modularize NixOS and Home Manager | Great Practices](https://youtu.be/vYc6IzKvAJQ?si=yBSlOrQ4_Ri_KFFh)
+
+Basically all you need to do is go to the default.nix file of each directory and enable/disable the mkDefault options.
+
+Lets say you want to enable neo-tree, in order to do that you'd have to go to config/filetrees/default.nix and change its value
+from
+
+```nix
+config = lib.mkIf config.filetrees.enable {
+  neo-tree.enable = lib.mkDefault false;
+};
+```
+
+to
+
+```nix
+config = lib.mkIf config.filetrees.enable {
+  neo-tree.enable = lib.mkDefault true;
+};
+```
+
+However, sometimes you'll have many plugins in the same directory and it can be quite annoying to change the value for all of them. So instead you can disable them all at once in config/default.nix like below:
+
+To disable all UI plugins for example, you can easily do it by going to config/default.nix and toggling the value from true to false:
+
+```nix
+  ui.enable = lib.mkDefault false;
+```
+
+</details>
+
 ## How to customize the install
 
 <p>If you would like to customize Neve to your liking, check this out!</p>
@@ -82,7 +117,7 @@ After enabling it, follow the steps below:
 
 2- Clone the fork.
 
-3- Make the changes you want, such as enabling/disabling plugins, changing colorschemes, changing neovim options, etc.
+3- Make the changes you want, such as enabling/disabling plugins, changing colorschemes, neovim options, etc.
 
 4- Add the fork to your flake.nix file, the original is `Neve.url = “github:redyf/Neve”`. If a user called foo forks the repo and renames it to bar, it would be `bar.url = “github:foo/bar”`.
 
@@ -119,3 +154,7 @@ This project is licensed under the [MIT License](LICENCE). See the LICENSE file 
 Encountered an issue or have a question? Visit our [Issue Tracker](https://github.com/redyf/Neve/issues) or message me on Discord, my username is **redyf**.
 
 Happy coding!
+
+```
+
+```
