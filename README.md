@@ -154,7 +154,3 @@ This project is licensed under the [MIT License](LICENCE). See the LICENSE file 
 Encountered an issue or have a question? Visit our [Issue Tracker](https://github.com/redyf/Neve/issues) or message me on Discord, my username is **redyf**.
 
 Happy coding!
-
-```
-
-```
