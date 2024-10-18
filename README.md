@@ -99,7 +99,7 @@ config = lib.mkIf config.filetrees.enable {
 };
 ```
 
-However, sometimes you'll have many plugins in the same directory and it can be quite annoying to change the value for all of them. So instead you can disable them all at once in config/default.nix like below:
+However, sometimes you'll have many plugins in the same directory and it can be quite annoying to change the value for all of them individually. So instead you can disable them all at once in config/default.nix like below:
 
 To disable all UI plugins for example, you can easily do it by going to config/default.nix and toggling the value from true to false:
 
