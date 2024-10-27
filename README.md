@@ -60,17 +60,33 @@ However if you'd like to give it a try before installing, <b>nix run github:redy
     <summary><b>INSTALLATION GUIDE</b></summary>
     I'm assuming you already use nix flakes but in case you don't, please check this tutorial to enable them:
 
-[Flakes](https://nixos.wiki/wiki/Flakes)
+1. Go to flake.nix and add Neve.url = "github:redyf/Neve" to your inputs.
+
+2. Run nix flake update, then Neve should be available for installation.
+
+### Option 1: Using [Flakes](https://nixos.wiki/wiki/Flakes) to install Neve as a Nixvim module.
+
+3. Install it by adding the following code to Nixvim configuration:
+
+```nix
+programs.nixvim = {
+  enable = true;
+  imports = [ inputs.Neve.nixvimModule ];
+  # Then configure Nixvim as usual, you might have to lib.mkForce some of the settings
+  colorschemes.catppuccin.enable = lib.mkForce false;
+  colorschemes.nord.enable = true;
+};
+```
+
+4. Rebuild your system and you should be done :
+
+### Option 2: Using [Flakes](https://nixos.wiki/wiki/Flakes) to install Neve as a package
 
 After enabling it, follow the steps below:
 
-1- Go to flake.nix and add Neve.url = "github:redyf/Neve" to your inputs.
+3. Install it by adding `inputs.Neve.packages.${pkgs.system}.default` to your environment.systemPackages or home.packages if you're using home-manager.
 
-2- Run nix flake update, then Neve should be available for installation.
-
-3- Install it by adding `inputs.Neve.packages.${pkgs.system}.default` to your environment.systemPackages or home.packages if you're using home-manager.
-
-4- Rebuild your system and you should be done :
+4. Rebuild your system and you should be done :
 
 </details>
 
