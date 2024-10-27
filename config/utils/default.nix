@@ -49,7 +49,7 @@
     persistence.enable = lib.mkDefault true;
     plenary.enable = lib.mkDefault true;
     project-nvim.enable = lib.mkDefault true;
-    sidebar.enable = lib.mkDefault true;
+    sidebar.enable = lib.mkDefault false;
     tmux-navigator.enable = lib.mkDefault true;
     todo-comments.enable = lib.mkDefault true;
     ultimate-autopair.enable = lib.mkDefault true;
