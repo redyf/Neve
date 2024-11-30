@@ -30,7 +30,6 @@
 ![Neve2](./assets/showcase2.png)
 ![Neve3](./assets/showcase3.png)
 ![Neve4](./assets/showcase4.png)
-![Neve5](./assets/showcase5.png)
 
 </details>
 
