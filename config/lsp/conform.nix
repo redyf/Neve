@@ -15,10 +15,15 @@
         # format_after_save = {
         #   lsp_format = "fallback";
         # };
-        format_on_save = {
-          timeoutMs = 500;
-          lspFallback = true;
-        };
+        format_on_save = ''
+          function(bufnr)
+            -- Disable with a global or buffer-local variable
+            if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+              return
+            end
+            return { timeout_ms = 500, lsp_format = 'fallback' }
+          end
+        '';
         formatters_by_ft = {
           html = {
             __unkeyed-1 = "prettierd";
