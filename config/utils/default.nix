@@ -7,13 +7,13 @@
   imports = [
     ./better-escape.nix
     ./cloak.nix
+    ./colorizer.nix
     ./harpoon.nix
     ./markdown-preview.nix
     ./mini.nix
     ./neocord.nix
     ./neotest.nix
     ./nvim-autopairs.nix
-    ./nvim-colorizer.nix
     ./nvim-surround.nix
     ./nvterm.nix
     ./oil.nix
@@ -42,7 +42,7 @@
     neocord.enable = lib.mkDefault true;
     neotest.enable = lib.mkDefault true;
     nvim-autopairs.enable = lib.mkDefault true;
-    nvim-colorizer.enable = lib.mkDefault true;
+    colorizer.enable = lib.mkDefault true;
     nvim-surround.enable = lib.mkDefault true;
     nvterm.enable = lib.mkDefault true;
     oil.enable = lib.mkDefault true;
