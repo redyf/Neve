@@ -11,7 +11,7 @@ in
     plugins.nvim-jdtls = {
       enable = true;
       cmd = [
-        "/nix/store/20h2hjjm94gbskqhbwikbgxbblv1xpf2-jdt-language-server-1.31.0/bin/jdtls"
+        "/nix/store/ka32hdd6lnbs1ahndn64p5519381r2vl-jdt-language-server-1.44.0/bin/jdtls"
       ];
       # configuration = "/path/to/configuration";
       data = "~/.cache/jdtls/workspace";
