@@ -12,7 +12,7 @@ in
       enable = true;
       settings = {
         cmd = [
-          "/nix/store/ka32hdd6lnbs1ahndn64p5519381r2vl-jdt-language-server-1.44.0/bin/jdtls --data ~/.cache/jdtls/workspace"
+          "/nix/store/l7wd7xjnz95yxv225kix5gbq8k3vm7fl-jdt-language-server-1.48.0/bin/jdtls --data ~/.cache/jdtls/workspace"
         ];
         # configuration = "/path/to/configuration";
         settings = {

@@ -48,8 +48,8 @@
           };
         };
       };
-      keymaps = lib.mkIf cfg.keymaps.enable
-        ([
+      keymaps = lib.mkIf cfg.keymaps.enable (
+        [
           {
             mode = "n";
             key = "<leader>bd";
@@ -121,7 +121,8 @@
               desc = "Delete non-pinned buffers";
             };
           }
-        ] ++ (lib.optionals cfg.keymaps.enableTab [
+        ]
+        ++ (lib.optionals cfg.keymaps.enableTab [
           {
             mode = "n";
             key = "<Tab>";
@@ -139,7 +140,8 @@
               desc = "Cycle to previous buffer";
             };
           }
-        ]) ++ (lib.optionals cfg.keymaps.enableHL [
+        ])
+        ++ (lib.optionals cfg.keymaps.enableHL [
           {
             mode = "n";
             key = "<S-l>";
@@ -157,6 +159,7 @@
               desc = "Cycle to previous buffer";
             };
           }
-        ]));
+        ])
+      );
     };
 }
