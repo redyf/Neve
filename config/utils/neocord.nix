@@ -6,6 +6,7 @@
   config = lib.mkIf config.neocord.enable {
     plugins.neocord = {
       enable = true;
+      lazyLoad.settings.event = "DeferredUIEnter";
       settings = {
         auto_update = true;
         blacklist = [ ];

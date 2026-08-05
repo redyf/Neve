@@ -6,6 +6,12 @@
   config = lib.mkIf config.undotree.enable {
     plugins.undotree = {
       enable = true;
+      lazyLoad.settings.cmd = [
+        "UndotreeToggle"
+        "UndotreeShow"
+        "UndotreeFocus"
+        "UndotreeHide"
+      ];
       settings = {
         autoOpenDiff = true;
         focusOnToggle = true;

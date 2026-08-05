@@ -7,6 +7,10 @@
 
     plugins.markdown-preview = {
       enable = true;
+      lazyLoad.settings = {
+        cmd = [ "MarkdownPreview" "MarkdownPreviewToggle" "MarkdownPreviewStop" ];
+        ft = "markdown";
+      };
       settings = {
         browser = "firefox";
         theme = "dark";
