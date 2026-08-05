@@ -49,6 +49,30 @@ Neve (snow in portuguese) is a meticulously crafted custom configuration for Nix
 
 - **Extensive Plugin Support:** Benefit from a curated selection of plugins that cover a wide range of programming languages and development tasks. Neve comes with pre-configured plugins to boost your productivity, and you can effortlessly expand its capabilities to suit your specific needs.
 
+- **Blazing Fast Startup:** Non-essential plugins are lazy-loaded with [lz.n](https://github.com/lumen-oss/lz.n) through Nixvim's native lazy loading support (`plugins.lz-n`) — telescope, cmp, dap, neotest, harpoon and friends only load on first use (command, keymap, event or filetype trigger). See the [Performance](#performance) section for measurements.
+
+## Performance
+
+Startup time measured on the author's machine (warm, `nvim --headless --startuptime /tmp/st.log +q`, 5 runs):
+
+| | Before (eager) | After (lazy) |
+|---|---|---|
+| média | ~181ms | ~77ms |
+| mediana | ~177ms | ~73ms |
+| range | 159–210ms | 69–96ms |
+
+**~58% faster startup (~104ms saved).**
+
+Where the time went: `sourcing vimrc` (init.lua) dropped 58.7→35.8ms, plugin pack loading 6.2→2.1ms, and eager requires like harpoon (~4ms), neotest-java (~1.1ms) and the telescope extensions (~0.15ms) simply don't run at startup anymore. LSP, treesitter, lualine and other core plugins stay eager by design.
+
+To measure it yourself:
+
+```bash
+NVIM=$(nix build . --no-link --print-out-paths)/bin/nvim
+$NVIM --headless --startuptime /tmp/st.log +q
+grep 'NVIM STARTED' /tmp/st.log
+```
+
 ## Installation
 
 Getting started with Neve is a breeze. Simply follow the installation guide below, and you'll be up and running in no time.
