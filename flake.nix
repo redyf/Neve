@@ -21,17 +21,6 @@
       nixpkgsConfig = {
         allowUnfree = true;
       };
-      # nixpkgs' `vimUtils.packDir` force-adds plugin `dependencies` to the
-      # START pack. That would break lz.n lazy-loading of telescope/neotest:
-      # their plugin/ scripts would run eagerly at startup, so `:Telescope` /
-      # `:Neotest` would execute the real commands without lz.n's `after` hook
-      # (setup + extensions never run). Strip the dependency metadata from the
-      # plugins that declare telescope/neotest as dependencies — the lazy spec
-      # (packadd) loads them on demand, and the dependent lua files only run on
-      # `require`. The deps are moved to `nativeBuildInputs` so the nixpkgs
-      # neovim-require-check-hook (which puts both `dependencies` and
-      # `nativeBuildInputs` on the rtp) still passes at build time. See
-      # LAZY_LOADING_PLAN.md.
       stripPluginDeps = final: prev: {
         vimPlugins =
           prev.vimPlugins
