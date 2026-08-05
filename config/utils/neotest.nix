@@ -13,6 +13,56 @@
     plugins = {
       neotest = {
         enable = true;
+        lazyLoad.settings = {
+          cmd = "Neotest";
+          keys = [
+            {
+              __unkeyed-1 = "<leader>tt";
+              __unkeyed-2.__raw = "function() require('neotest').run.run(vim.fn.expand '%') end";
+              desc = "Run File";
+            }
+            {
+              __unkeyed-1 = "<leader>tT";
+              __unkeyed-2.__raw = "function() require('neotest').run.run(vim.loop.cwd()) end";
+              desc = "Run All Test Files";
+            }
+            {
+              __unkeyed-1 = "<leader>tr";
+              __unkeyed-2.__raw = "function() require('neotest').run.run() end";
+              desc = "Run Nearest";
+            }
+            {
+              __unkeyed-1 = "<leader>td";
+              __unkeyed-2.__raw = ''
+                function()
+                  require('lz.n').trigger_load('nvim-dap')
+                  require('neotest').run.run({ strategy = 'dap' })
+                end
+              '';
+              desc = "Run Nearest with debugger";
+            }
+            {
+              __unkeyed-1 = "<leader>ts";
+              __unkeyed-2.__raw = "function() require('neotest').summary.toggle() end";
+              desc = "Toggle Summary";
+            }
+            {
+              __unkeyed-1 = "<leader>to";
+              __unkeyed-2.__raw = "function() require('neotest').output.open{ enter = true, auto_close = true } end";
+              desc = "Show Output";
+            }
+            {
+              __unkeyed-1 = "<leader>tO";
+              __unkeyed-2.__raw = "function() require('neotest').output_panel.toggle() end";
+              desc = "Toggle Output Panel";
+            }
+            {
+              __unkeyed-1 = "<leader>tS";
+              __unkeyed-2.__raw = "function() require('neotest').run.stop() end";
+              desc = "Stop";
+            }
+          ];
+        };
         adapters = {
           java.enable = true;
           python.enable = true;
@@ -33,80 +83,6 @@
     extraPlugins = with pkgs.vimPlugins; [
       FixCursorHold-nvim
       nvim-nio
-    ];
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>tt";
-        action = "<cmd>lua require('neotest').run.run(vim.fn.expand '%')<CR>";
-        options = {
-          desc = "Run File";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>tT";
-        action = "<cmd>lua require('neotest').run.run(vim.loop.cwd())<CR>";
-        options = {
-          desc = "Run All Test Files";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>tr";
-        action = "<cmd>lua require('neotest').run.run()<CR>";
-        options = {
-          desc = "Run Nearest";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>td";
-        action = "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>";
-        options = {
-          desc = "Run Nearest with debugger";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>ts";
-        action = "<cmd>lua require('neotest').summary.toggle()<CR>";
-        options = {
-          desc = "Toggle Summary";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>to";
-        action = "<cmd>lua require('neotest').output.open{ enter = true, auto_close = true }<CR>";
-        options = {
-          desc = "Show Output";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>tO";
-        action = "<cmd>lua require('neotest').output_panel.toggle()<CR>";
-        options = {
-          desc = "Toggle Output Panel";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>tS";
-        action = "<cmd>lua require('neotest').run.stop()<CR>";
-        options = {
-          desc = "Stop";
-          silent = true;
-        };
-      }
     ];
   };
 }
