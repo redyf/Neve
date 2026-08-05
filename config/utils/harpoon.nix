@@ -6,39 +6,14 @@
   config = lib.mkIf config.harpoon.enable {
     plugins.harpoon = {
       enable = true;
-      enableTelescope = true;
+      lazyLoad.settings.keys = [
+        { __unkeyed-1 = "<leader>ha"; __unkeyed-2.__raw = "function() require'harpoon':list():add() end"; }
+        { __unkeyed-1 = "<C-e>"; __unkeyed-2.__raw = "function() require'harpoon'.ui:toggle_quick_menu(require'harpoon':list()) end"; }
+        { __unkeyed-1 = "<C-j>"; __unkeyed-2.__raw = "function() require'harpoon':list():select(1) end"; }
+        { __unkeyed-1 = "<C-k>"; __unkeyed-2.__raw = "function() require'harpoon':list():select(2) end"; }
+        { __unkeyed-1 = "<C-l>"; __unkeyed-2.__raw = "function() require'harpoon':list():select(3) end"; }
+        { __unkeyed-1 = "<C-m>"; __unkeyed-2.__raw = "function() require'harpoon':list():select(4) end"; }
+      ];
     };
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>ha";
-        action.__raw = "function() require'harpoon':list():add() end";
-      }
-      {
-        mode = "n";
-        key = "<C-e>";
-        action.__raw = "function() require'harpoon'.ui:toggle_quick_menu(require'harpoon':list()) end";
-      }
-      {
-        mode = "n";
-        key = "<C-j>";
-        action.__raw = "function() require'harpoon':list():select(1) end";
-      }
-      {
-        mode = "n";
-        key = "<C-k>";
-        action.__raw = "function() require'harpoon':list():select(2) end";
-      }
-      {
-        mode = "n";
-        key = "<C-l>";
-        action.__raw = "function() require'harpoon':list():select(3) end";
-      }
-      {
-        mode = "n";
-        key = "<C-m>";
-        action.__raw = "function() require'harpoon':list():select(4) end";
-      }
-    ];
   };
 }

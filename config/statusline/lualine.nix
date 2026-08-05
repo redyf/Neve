@@ -36,8 +36,6 @@
       };
     };
     extraConfigLua = ''
-      local harpoon = require("harpoon")
-
       local function truncate_branch_name(branch)
         if not branch or branch == "" then
           return ""
@@ -51,6 +49,10 @@
       end
 
       local function harpoon_component()
+        local ok, harpoon = pcall(require, "harpoon")
+        if not ok then
+          return ""
+        end
         local list = harpoon:list()
         local total_marks = list:length()
         if total_marks == 0 then
