@@ -57,8 +57,8 @@ Startup time measured on the author's machine (warm, `nvim --headless --startupt
 
 | | Before (eager) | After (lazy) |
 |---|---|---|
-| média | ~181ms | ~77ms |
-| mediana | ~177ms | ~73ms |
+| average | ~181ms | ~77ms |
+| median | ~177ms | ~73ms |
 | range | 159–210ms | 69–96ms |
 
 **~58% faster startup (~104ms saved).**
