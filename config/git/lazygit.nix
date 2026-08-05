@@ -7,11 +7,8 @@
 
     plugins.lazygit = {
       enable = true;
+      lazyLoad.settings.cmd = "LazyGit";
     };
-
-    extraConfigLua = ''
-      require("telescope").load_extension("lazygit")
-    '';
 
     keymaps = [
       {
