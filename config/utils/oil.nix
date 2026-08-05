@@ -6,6 +6,9 @@
   config = lib.mkIf config.oil.enable {
     plugins.oil = {
       enable = true;
+      # Not the netrw replacement (no default_file_explorer), so loading on the
+      # Oil command is safe; <leader>o routes through the lz.n cmd trigger.
+      lazyLoad.settings.cmd = "Oil";
       settings = {
         deleteToTrash = true;
         useDefaultKeymaps = true;

@@ -11,6 +11,7 @@
         require('lz.n').trigger_load('harpoon2')
         require('lz.n').trigger_load('lazygit.nvim')
         require('lz.n').trigger_load('todo-comments.nvim')
+        require('lz.n').trigger_load('project.nvim')
         require("telescope").load_extension("harpoon")
         require("telescope").load_extension("projects")
         require("telescope").load_extension("lazygit")
