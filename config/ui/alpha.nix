@@ -43,7 +43,7 @@
               type = "button";
               val = "  Find File";
               on_press = {
-                __raw = "function() require('telescope.builtin').find_files() end";
+                __raw = "function() vim.cmd('Telescope find_files') end";
               };
               opts = {
                 # hl = "comment";
@@ -99,7 +99,7 @@
               type = "button";
               val = "󰈚  Recent Files";
               on_press = {
-                __raw = "function() require('telescope.builtin').oldfiles() end";
+                __raw = "function() vim.cmd('Telescope oldfiles') end";
               };
               opts = {
                 # hl = "comment";
@@ -127,7 +127,7 @@
               type = "button";
               val = "󰈭  Find Word";
               on_press = {
-                __raw = "function() require('telescope.builtin').live_grep() end";
+                __raw = "function() vim.cmd('Telescope live_grep') end";
               };
               opts = {
                 # hl = "comment";
