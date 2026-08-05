@@ -6,6 +6,7 @@
   config = lib.mkIf config.trouble.enable {
     plugins.trouble = {
       enable = true;
+      lazyLoad.settings.cmd = "Trouble";
       settings = {
         auto_close = true;
       };

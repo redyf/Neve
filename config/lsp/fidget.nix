@@ -6,6 +6,7 @@
   config = lib.mkIf config.fidget.enable {
     plugins.fidget = {
       enable = true;
+      lazyLoad.settings.event = "DeferredUIEnter";
       settings = {
         logger = {
           level = "warn"; # “off”, “error”, “warn”, “info”, “debug”, “trace”
