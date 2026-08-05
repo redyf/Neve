@@ -6,6 +6,16 @@
   config = lib.mkIf config.telescope-nvim.enable {
     plugins.telescope = {
       enable = true;
+      lazyLoad.settings.cmd = "Telescope";
+      luaConfig.post = ''
+        require('lz.n').trigger_load('harpoon2')
+        require('lz.n').trigger_load('lazygit.nvim')
+        require('lz.n').trigger_load('todo-comments.nvim')
+        require("telescope").load_extension("harpoon")
+        require("telescope").load_extension("projects")
+        require("telescope").load_extension("lazygit")
+        require("telescope").load_extension("todo-comments")
+      '';
       extensions = {
         fzf-native = {
           enable = true;
