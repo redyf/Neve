@@ -39,6 +39,8 @@
   filetrees.enable = lib.mkDefault false;
   git.enable = lib.mkDefault true;
   keys.enable = true;
+
+  plugins.lz-n.enable = true;
   languages.enable = true;
   lsp.enable = lib.mkDefault true;
   sets.enable = lib.mkDefault true;
