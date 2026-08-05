@@ -7,22 +7,49 @@
     plugins = {
       cmp-nvim-lsp = {
         enable = true;
+        lazyLoad.settings.event = "InsertEnter";
       }; # lsp
       cmp-buffer = {
         enable = true;
+        lazyLoad.settings.event = "InsertEnter";
       };
       cmp-path = {
         enable = true;
+        lazyLoad.settings.event = "InsertEnter";
       }; # file system paths
       cmp-cmdline = {
         enable = true;
+        lazyLoad.settings.event = "CmdlineEnter";
       }; # autocomplete for cmdline
       cmp_luasnip = {
         enable = true;
+        lazyLoad.settings.event = "InsertEnter";
       }; # snippets
       cmp = {
         enable = true;
         autoEnableSources = false;
+        lazyLoad.settings = {
+          event = [ "InsertEnter" "CmdlineEnter" ];
+          before.__raw = "function() require('lz.n').trigger_load('luasnip') end";
+        };
+        luaConfig.pre = ''
+          local luasnip = require("luasnip")
+        '';
+        luaConfig.post = ''
+          local cmp = require("cmp")
+          cmp.setup.cmdline({ "/", "?" }, {
+            sources = {
+              { name = "buffer" },
+            },
+          })
+          cmp.setup.cmdline(":", {
+            sources = cmp.config.sources({
+              { name = "path" },
+            }, {
+              { name = "cmdline" },
+            }),
+          })
+        '';
         settings = {
           experimental = {
             ghost_text = true;
@@ -106,53 +133,5 @@
         };
       };
     };
-    extraConfigLua = ''
-      local luasnip = require("luasnip")
-      kind_icons = {
-        Text = "󰊄",
-        Method = "",
-        Function = "󰡱",
-        Constructor = "",
-        Field = "",
-        Variable = "󱀍",
-        Class = "",
-        Interface = "",
-        Module = "󰕳",
-        Property = "",
-        Unit = "",
-        Value = "",
-        Enum = "",
-        Keyword = "",
-        Snippet = "",
-        Color = "",
-        File = "",
-        Reference = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-        Struct = "",
-        Event = "",
-        Operator = "",
-        TypeParameter = "",
-      }
-
-      local cmp = require'cmp'
-
-      -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline({'/', "?" }, {
-        sources = {
-          { name = 'buffer' }
-        }
-      })
-
-      -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-      cmp.setup.cmdline(':', {
-        sources = cmp.config.sources({
-          { name = 'path' }
-        }, {
-        { name = 'cmdline' }
-        }),
-      })  
-    '';
   };
 }
